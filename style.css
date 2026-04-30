@@ -755,7 +755,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 1.5rem;
+
   font-size: clamp(0.9rem, 1vw, 1rem);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
@@ -865,20 +865,14 @@ ul {
 }
 
 .bento-header-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: clamp(2rem, 3vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
   column-gap: clamp(2rem, 4vw, 4rem);
   margin-bottom: clamp(3rem, 5vw, 4rem);
 }
 
-.bento-header-grid .left-col {
-  grid-column: 1 / -1;
-}
 
-.bento-header-grid .right-col {
-  grid-column: 2 / -1;
-}
 
 .bento-grid {
   display: grid;
