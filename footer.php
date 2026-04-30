@@ -18,17 +18,9 @@
                     regions and industries.
                 </h2>
                 <div class="footer-cta-group">
-                     <a href="<?php echo esc_url( home_url( '/demo' ) ); ?>" class="btn btn-primary bg-primary text-white font-medium text-base rounded-sm inline-flex items-center gap-sm">
-                Request a demo 
-                <span class="btn-icon icon-box icon-lg bg-white text-primary rounded-sm">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                        <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                </span>
-            </a>
+                     
                     <a href="#" class="btn btn-outline border-primary text-primary font-medium text-base rounded-sm inline-flex items-center gap-lg">
-                   contact sales
+                   Contact sales
                     <span class="btn-icon icon-box icon-lg bg-primary text-white rounded-sm">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="7" y1="17" x2="17" y2="7"></line>
