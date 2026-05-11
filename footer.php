@@ -74,7 +74,7 @@
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="footer-bottom-left">
-                <?php echo date('Y'); ?> Trust Habits
+                <?php echo date('Y'); ?> Trust Habit
             </div>
             <div class="footer-bottom-center">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
