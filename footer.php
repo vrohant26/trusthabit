@@ -42,6 +42,7 @@
                         <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
                         <li><a href="<?php echo esc_url( home_url( '/pricing' ) ); ?>">Pricing</a></li>
                         <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact Us</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li>
                     </ul>
                 </div>
 

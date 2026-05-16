@@ -19,7 +19,7 @@ get_header();
                 </div>
                 <h1 class="hero-title text-4xl font-semibold leading-tight text-dark tracking-tight mb-md">
                     <span class="text-primary">Cyber-resilience</span><br>
-                    through habit
+                   through phishing simulations
                 </h1>
                 <p class="hero-subtitle text-lg text-muted leading-relaxed mb-lg">
                     TrustHabit helps organizations reduce phishing risk by shaping secure behavior over time, not by overwhelming employees with one-time training.
@@ -112,21 +112,23 @@ get_header();
                     </div>
                     
                     <h2 class="problem-title">
-                        Cybersecurity fails at<br>
-                        the moment of <span class="text-primary">human decision.</span>
+                       $16B+ <br>
+                       Lost to Internet Crime
                     </h2>
+
+                     <div class="problem-stat font-body">
+                        <span>with phishing/spoofing being the most reported crime type by number of victims, as per the FBI
+                    </div>
                     
                     <p class="problem-desc">
                         Modern phishing attacks don't break systems first. They exploit routine, trust, and distraction.
                     </p>
                     
-                    <div class="problem-stat font-body">
-                        <span class="text-primary font-semibold">$16B+ Lost to Internet Crime</span> with phishing/<br>spoofing being the most reported crime type by<br>number of victims, as per the FBI
-                    </div>
+                   
                     
                     <div class="flex items-center gap-lg mt-md">
                       <a href="#" class="btn btn-outline border-primary text-primary font-medium text-base rounded-sm inline-flex items-center justify-center" style="padding: 0.75rem 1.5rem;">
-                    Talk to sales
+                    Know More
                 </a>
                         
                         <a href="#" class="link-with-icon">
@@ -162,11 +164,11 @@ get_header();
               HIDDEN COST OF PHISHING
             </div>
             <h2 class="font-heading font-medium leading-tight bento-header-title title-white">
-              Phishing is no longer a minor security issue
+              Phishing is no longer just spam email
             </h2>
           </div>
           <div class="right-col bento-header-desc">
-            <p class="m-0">It is one of the most consistent and costly causes of cyber incidents worldwide.</p>
+            <p class="m-0">It is now of the most effective entry points for credential theft, ransomware, and business compromise.</p>
             <p class="m-0">Phishing attacks don't just compromise systems. They expose sensitive data, disrupt operations, and erode trust.</p>
             <p class="m-0">Every successful phishing attack represents not just a security failure, but a strategic vulnerability that competitors and threat actors will continue to exploit.</p>
           </div>
@@ -214,7 +216,7 @@ get_header();
               <svg width="24" height="24" viewBox="0 0 24 24" fill="#ef4444" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2L1 21H23L12 2ZM12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17C13 17.5523 12.5523 18 12 18ZM11 15V10H13V15H11Z" fill="#ef4444"/>
               </svg>
-              Hidden Cost Of Phishing
+              The Real Cost of a Wrong Click
             </div>
           </div>
 
@@ -314,12 +316,12 @@ get_header();
                         <!-- Item 1 -->
                         <div class="audience-item">
                             <div class="audience-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
                                 </svg>
                             </div>
-                            <h3 class="audience-item-title font-heading">Security Teams Seeking Proof</h3>
-                            <p class="audience-item-desc">Security teams who need proof their phishing defenses actually work. Real-world evidence that employees can identify threats, report incidents faster, and make smarter decisions when it matters most.</p>
+                            <h3 class="audience-item-title font-heading">IT &amp; Security Teams</h3>
+                            <p class="audience-item-desc">Run phishing simulations, identify risky users, and track human attack surface reduction.</p>
                         </div>
                         
                         <div class="audience-divider"></div>
@@ -327,13 +329,12 @@ get_header();
                         <!-- Item 2 -->
                         <div class="audience-item">
                             <div class="audience-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                    <path d="M8 11h8M8 15h5M12 7v.01"></path>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 12h12M4 6h8M4 18h8M14 6l6 6-6 6"></path>
                                 </svg>
                             </div>
-                            <h3 class="audience-item-title font-heading">HR &amp; Compliance Leaders Bridging Gaps</h3>
-                            <p class="audience-item-desc">HR and compliance leaders bridging the gap between policy and practice. Turning security requirements into everyday habits while demonstrating clear progress to auditors and executives.</p>
+                            <h3 class="audience-item-title font-heading">Managed Security Service Providers (MSSPs)</h3>
+                            <p class="audience-item-desc">Manage multiple customer tenants, campaigns, and reports from one platform.</p>
                         </div>
                         
                         <div class="audience-divider"></div>
@@ -341,14 +342,14 @@ get_header();
                         <!-- Item 3 -->
                         <div class="audience-item">
                             <div class="audience-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                                     <path d="M8 21h8M12 17v4"></path>
                                     <path d="M2 13h4l2-3 4 6 2-3h4"></path>
                                 </svg>
                             </div>
-                            <h3 class="audience-item-title font-heading">Multi-Site Organizations at Scale</h3>
-                            <p class="audience-item-desc">Multi-site organizations managing security across distributed teams and diverse regions. Ensuring consistent security behavior while adapting to local contexts and varying levels of technical sophistication.</p>
+                            <h3 class="audience-item-title font-heading">Compliance-Driven Organizations</h3>
+                            <p class="audience-item-desc">Support awareness initiatives for ISO 27001, SOC 2, PCI-DSS, HIPAA, IEC 62443, and internal audits.</p>
                         </div>
 
                         <div class="audience-divider"></div>
@@ -356,12 +357,40 @@ get_header();
                         <!-- Item 4 -->
                         <div class="audience-item">
                             <div class="audience-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
                                 </svg>
                             </div>
-                            <h3 class="audience-item-title font-heading">Companies Moving Beyond Annual Training</h3>
-                            <p class="audience-item-desc">Companies moving beyond annual training to continuous security culture. Replacing one-and-done sessions with ongoing engagement, real-time feedback, and learning that evolves with emerging threats.</p>
+                            <h3 class="audience-item-title font-heading">Remote &amp; Hybrid Workforces</h3>
+                            <p class="audience-item-desc">Continuously test employees against modern phishing tactics outside traditional office networks.</p>
+                        </div>
+
+                        <div class="audience-divider"></div>
+
+                        <!-- Item 5 -->
+                        <div class="audience-item">
+                            <div class="audience-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M8 21h8M12 17v4"></path>
+                                    <path d="M2 13h4l2-3 4 6 2-3h4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="audience-item-title font-heading">Enterprises Targeted By BEC &amp; Ransomware</h3>
+                            <p class="audience-item-desc">Reduce risk from credential theft, invoice fraud, and social engineering attacks.</p>
+                        </div>
+
+                        <div class="audience-divider"></div>
+
+                        <!-- Item 6 -->
+                        <div class="audience-item">
+                            <div class="audience-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                                </svg>
+                            </div>
+                            <h3 class="audience-item-title font-heading">Internal Security Awareness Programs</h3>
+                            <p class="audience-item-desc">Move beyond annual training with continuous phishing simulations and measurable behavior tracking.</p>
                         </div>
 
                     </div>
