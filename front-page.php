@@ -180,10 +180,11 @@ get_header();
           <div class="bento-card bento-1">
             <div class="exclamation-glow card-1-glow">!</div>
             <div class="bento-content">
-              <div class="bento-number-md">
-                #1 <span class="bento-label">attack entry point</span>
+              <div>
+                <div class="bento-number-md">16%</div>
+                <div class="bento-label">Phishing Attacks</div>
               </div>
-              <p class="bento-text">Phishing and social engineering remain the most common initial vectors in reported security incidents worldwide.</p>
+              <p class="bento-text">Breaches begin with phishing attacks, where cybercriminals trick users into revealing sensitive information.</p>
             </div>
           </div>
 
@@ -191,10 +192,10 @@ get_header();
           <div class="bento-card bento-2">
             <div class="bento-content bento-col-flex">
               <div>
-                <div class="bento-number-lg">90%</div>
-                <div class="bento-label">target sensitive data</div>
+                <div class="bento-number-lg">60%</div>
+                <div class="bento-label">Human Element in Data Breaches</div>
               </div>
-              <p class="bento-text">Credentials, customer records, financial information, and internal documents are the primary targets of phishing compromises.</p>
+              <p class="bento-text">Including mistakes, weak passwords, or falling for scams. This shows that employee awareness and cybersecurity training are critical to reducing organizational risk.</p>
             </div>
           </div>
 
@@ -203,10 +204,10 @@ get_header();
             <div class="exclamation-glow card-3-glow">!</div>
             <div class="bento-content bento-col-flex bento-max-65">
               <div>
-                <div class="bento-number-lg">3-5x</div>
-                <div class="bento-label">cost multiplication</div>
+                <div class="bento-number-lg">22%</div>
+                <div class="bento-label">Credential Abuse</div>
               </div>
-              <p class="bento-text">Beyond data loss, phishing incidents trigger downtime, response costs, regulatory fines, and lasting reputational harm.</p>
+              <p class="bento-text">These breaches start through credential abuse, often involving stolen or reused passwords.</p>
             </div>
           </div>
 
@@ -225,9 +226,9 @@ get_header();
             <div class="exclamation-glow card-5-glow">!</div>
             <div class="bento-content bento-max-70">
               <div class="bento-number-lg" style="margin-bottom: 5rem;">
-                $10B+ <span class="bento-label-alt">in annual losses</span>
+                88% <span class="bento-label-alt">Stolen Credentials in Web Attacks</span>
               </div>
-              <p class="bento-text-md">Phishing-driven fraud and breaches cost businesses and consumers <strong class="text-dark">billions</strong> globally each year in direct financial damage.</p>
+              <p class="bento-text-md">These web application attacks use stolen credentials, making identity security a major concern for businesses operating online.</p>
             </div>
           </div>
 
@@ -235,10 +236,10 @@ get_header();
           <div class="bento-card bento-6">
             <div class="bento-content bento-col-flex">
               <div class="text-right">
-                <div class="bento-number-lg">95%</div>
-                <div class="bento-label" style="margin-bottom: 2rem;">involve human decisions</div>
+                <div class="bento-number-lg">$4.44M</div>
+                <div class="bento-label" style="margin-bottom: 2rem;">Cost of a Data Breach</div>
               </div>
-              <p class="bento-text-sm text-right">Phishing success depends less on technology gaps and more on how employees respond in critical moments.</p>
+              <p class="bento-text-sm text-right">The average global cost of a data breach, reflecting financial losses, recovery expenses, and reputational damage organizations face after an incident.</p>
             </div>
           </div>
 
