@@ -2,7 +2,7 @@
     <!-- Top banner with grid pattern -->
     <div class="footer-top-banner">
         <div class="container px-container text-center">
-            <span class="text-primary font-medium text-xl">Cyber-resilience</span> <span class="text-muted text-xl">through habit</span>
+            <span class="text-primary font-medium text-xl">Identify your riskiest employees</span> <span class="text-muted text-xl">before attackers do</span>
         </div>
     </div>
 
@@ -37,12 +37,12 @@
                 <div class="footer-nav-col">
                     <h4 class="footer-nav-title uppercase tracking-wide text-xs">Navigation</h4>
                     <ul class="footer-nav-list">
-                        <li class="active-nav"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a> <span class="nav-dot"></span></li>
-                        <li><a href="<?php echo esc_url( home_url( '/features' ) ); ?>">Features</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/pricing' ) ); ?>">Pricing</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact Us</a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li>
+                        <li class="<?php echo is_front_page() ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a> <?php if(is_front_page()) echo '<span class="nav-dot"></span>'; ?></li>
+                        <!-- <li><a href="<?php echo esc_url( home_url( '/features' ) ); ?>">Features</a></li> -->
+                        <li class="<?php echo is_page('about') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a> <?php if(is_page('about')) echo '<span class="nav-dot"></span>'; ?></li>
+                        <!-- <li><a href="<?php echo esc_url( home_url( '/pricing' ) ); ?>">Pricing</a></li> -->
+                        <li class="<?php echo is_page('contact') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact Us</a> <?php if(is_page('contact')) echo '<span class="nav-dot"></span>'; ?></li>
+                        <!-- <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li> -->
                     </ul>
                 </div>
 
@@ -83,7 +83,7 @@
                 </a>
             </div>
             <div class="footer-bottom-right">
-                <a href="<?php echo esc_url( home_url( '/sitemap' ) ); ?>">Sitemap</a>
+                <!-- <a href="<?php echo esc_url( home_url( '/sitemap' ) ); ?>">Sitemap</a> -->
                 <a href="<?php echo esc_url( home_url( '/privacy' ) ); ?>">Privacy</a>
                 <a href="<?php echo esc_url( home_url( '/terms' ) ); ?>">Terms</a>
             </div>

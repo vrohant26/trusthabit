@@ -4,7 +4,7 @@
  */
 
 get_header();
-?>
+?> 
 
 <main id="primary" class="site-main custom-hero-bg ">
     <div class="gradient"></div>
@@ -262,7 +262,111 @@ get_header();
         </div>
     </section>
 
-    <!-- Fifth Section: Logo Animation -->
+    <!-- Fifth Section: Features Flow -->
+    <section class="ff-section">
+
+        <!-- Background gradient layer that fades white → blue -->
+        <div class="ff-bg"></div>
+
+        <div class="container px-container" style="position:relative;z-index:2;">
+
+            <!-- Header -->
+            <div class="ff-header">
+                <h2 class="ff-title  font-heading">
+                    <span class="text-primary">TrustHabit</span> Helps Organizations<br>
+                    Understand and Outsmart<br>
+                    Phishing Risks
+                </h2>
+                <p class="ff-subtitle font-body text-muted">
+                    By analyzing how teams respond to real phishing attempts, the platform reinforces
+                    positive habits and tracks measurable security improvement over time.
+                </p>
+            </div>
+
+            <!-- Flow Rows Container (SVG overlaid) -->
+            <div class="ff-rows" id="ff-rows">
+
+                <!-- SVG Canvas — drawn by JS -->
+                <svg class="ff-svg" id="ff-svg" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+                    <defs>
+                        <!-- Gradient for path 1: white top → light blue bottom -->
+                        <linearGradient id="ff-grad-1" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.92"/>
+                            <stop offset="100%" stop-color="#6aaad8" stop-opacity="0.88"/>
+                        </linearGradient>
+                        <!-- Gradient for path 2: white top → light blue bottom -->
+                        <linearGradient id="ff-grad-2" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.92"/>
+                            <stop offset="100%" stop-color="#6aaad8" stop-opacity="0.88"/>
+                        </linearGradient>
+                    </defs>
+                    <path id="ff-path-1-bg" class="ff-path-bg"/>
+                    <path id="ff-path-1"    class="ff-path-line"/>
+                    <path id="ff-path-2-bg" class="ff-path-bg"/>
+                    <path id="ff-path-2"    class="ff-path-line"/>
+                </svg>
+
+                <!-- Row 1 — Image LEFT · Content RIGHT -->
+                <div class="ff-row ff-row-1">
+                    <div class="ff-img-col">
+                        <div class="ff-card" id="ff-card-1">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature%201.png"
+                                 alt="Realistic Phishing Simulations" class="ff-img">
+                        </div>
+                    </div>
+                    <div class="ff-text-col">
+                        <span class="ff-badge font-heading">1</span>
+                        <h3 class="ff-step-title font-heading">Realistic Phishing<br>Simulations</h3>
+                        <p class="ff-step-desc font-body text-muted">
+                            Safely simulate real-world phishing scenarios<br>
+                            to observe how teams respond in practice.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 2 — Content LEFT · Image RIGHT -->
+                <div class="ff-row ff-row-2">
+                    <div class="ff-text-col">
+                        <span class="ff-badge font-heading">2</span>
+                        <h3 class="ff-step-title font-heading">Multiple Targeted<br>Campaigns</h3>
+                        <p class="ff-step-desc font-body text-muted">
+                            Run multiple campaigns<br>
+                            simultaneously across departments<br>
+                            and geographies.
+                        </p>
+                    </div>
+                    <div class="ff-img-col">
+                        <div class="ff-card" id="ff-card-2">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature%202.png"
+                                 alt="Multiple Targeted Campaigns" class="ff-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3 — Image LEFT · Content RIGHT -->
+                <div class="ff-row ff-row-3">
+                    <div class="ff-img-col">
+                        <div class="ff-card" id="ff-card-3">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/feature%203.png"
+                                 alt="Phishing Simulation Analytics" class="ff-img">
+                        </div>
+                    </div>
+                    <div class="ff-text-col">
+                        <span class="ff-badge font-heading">3</span>
+                        <h3 class="ff-step-title font-heading">Phishing Simulation<br>Analytics</h3>
+                        <p class="ff-step-desc font-body text-muted">
+                            Monitor campaign performance, identify<br>
+                            vulnerable users, and measure security<br>
+                            awareness progress in real time.
+                        </p>
+                    </div>
+                </div>
+
+            </div><!-- /.ff-rows -->
+        </div>
+    </section>
+
+    <!-- Sixth Section: Logo Animation -->
     <section class="logo-animation-section flex items-center justify-center">
         <div class="animated-logo-content flex items-center gap-md">
             <div class="animated-logo-icon bg-gray-light text-white rounded-sm flex items-center justify-center">
@@ -292,8 +396,8 @@ get_header();
                         WHO TRUST HABIT IS FOR
                     </div>
                     <h2 class="audience-title font-heading">
-                        Built for teams that<br>
-                        take human risk<br>
+                        Built for teams that
+                        take human risk
                         seriously
                     </h2>
                     <p class="audience-desc mb-lg">
@@ -523,3 +627,4 @@ get_header();
 
 <?php
 get_footer();
+?>

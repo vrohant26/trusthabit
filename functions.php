@@ -32,7 +32,118 @@ function trust_habbits_scripts() {
     // Enqueue Lenis for smooth scroll
     wp_enqueue_script( 'lenis', 'https://unpkg.com/lenis@1.1.0/dist/lenis.min.js', array(), null, true );
 
+    // Enqueue Swiper.js
+    wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null );
+    wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true );
+
     // Custom JS file
-    wp_enqueue_script( 'trust-habbits-customjs', get_template_directory_uri() . '/js/custom.js', array('gsap', 'gsap-scrolltrigger', 'gsap-splittext', 'lenis'), wp_get_theme()->get( 'Version' ), true );
+    wp_enqueue_script( 'trust-habbits-customjs', get_template_directory_uri() . '/js/custom.js', array('gsap', 'gsap-scrolltrigger', 'gsap-splittext', 'lenis', 'swiper-js'), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'trust_habbits_scripts' );
+
+// ==========================================
+// Register 'Team' Custom Post Type
+// ==========================================
+function trust_habbits_register_team_cpt() {
+    $labels = array(
+        'name'               => _x( 'Team Members', 'post type general name', 'trust-habbits' ),
+        'singular_name'      => _x( 'Team Member', 'post type singular name', 'trust-habbits' ),
+        'menu_name'          => _x( 'Team', 'admin menu', 'trust-habbits' ),
+        'name_admin_bar'     => _x( 'Team Member', 'add new on admin bar', 'trust-habbits' ),
+        'add_new'            => _x( 'Add New', 'team member', 'trust-habbits' ),
+        'add_new_item'       => __( 'Add New Team Member', 'trust-habbits' ),
+        'new_item'           => __( 'New Team Member', 'trust-habbits' ),
+        'edit_item'          => __( 'Edit Team Member', 'trust-habbits' ),
+        'view_item'          => __( 'View Team Member', 'trust-habbits' ),
+        'all_items'          => __( 'All Team Members', 'trust-habbits' ),
+        'search_items'       => __( 'Search Team Members', 'trust-habbits' ),
+        'not_found'          => __( 'No team members found.', 'trust-habbits' ),
+        'not_found_in_trash' => __( 'No team members found in Trash.', 'trust-habbits' )
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'team' ),
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'menu_icon'          => 'dashicons-groups',
+        'supports'           => array( 'title', 'thumbnail' ) // Title = Name, Thumbnail = Image
+    );
+
+    register_post_type( 'team', $args );
+}
+add_action( 'init', 'trust_habbits_register_team_cpt' );
+
+// ==========================================
+// Add Meta Boxes for Team CPT
+// ==========================================
+function trust_habbits_add_team_meta_boxes() {
+    add_meta_box(
+        'team_member_details',
+        __( 'Team Member Details', 'trust-habbits' ),
+        'trust_habbits_render_team_meta_box',
+        'team',
+        'normal',
+        'default'
+    );
+}
+add_action( 'add_meta_boxes', 'trust_habbits_add_team_meta_boxes' );
+
+function trust_habbits_render_team_meta_box( $post ) {
+    // Add a nonce field so we can check for it later.
+    wp_nonce_field( 'trust_habbits_save_team_meta_box_data', 'trust_habbits_team_meta_box_nonce' );
+
+    // Retrieve existing values
+    $designation = get_post_meta( $post->ID, '_team_designation', true );
+    $linkedin    = get_post_meta( $post->ID, '_team_linkedin', true );
+
+    echo '<table class="form-table">';
+    echo '<tr>';
+    echo '<th><label for="team_designation">' . __( 'Designation', 'trust-habbits' ) . '</label></th>';
+    echo '<td><input type="text" id="team_designation" name="team_designation" value="' . esc_attr( $designation ) . '" size="25" style="width:100%;" /></td>';
+    echo '</tr>';
+    echo '<tr>';
+    echo '<th><label for="team_linkedin">' . __( 'LinkedIn URL', 'trust-habbits' ) . '</label></th>';
+    echo '<td><input type="url" id="team_linkedin" name="team_linkedin" value="' . esc_attr( $linkedin ) . '" size="25" style="width:100%;" /></td>';
+    echo '</tr>';
+    echo '</table>';
+}
+
+function trust_habbits_save_team_meta_box_data( $post_id ) {
+    // Check if our nonce is set.
+    if ( ! isset( $_POST['trust_habbits_team_meta_box_nonce'] ) ) {
+        return;
+    }
+    // Verify that the nonce is valid.
+    if ( ! wp_verify_nonce( $_POST['trust_habbits_team_meta_box_nonce'], 'trust_habbits_save_team_meta_box_data' ) ) {
+        return;
+    }
+    // If this is an autosave, our form has not been submitted, so we don't want to do anything.
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    // Check the user's permissions.
+    if ( isset( $_POST['post_type'] ) && 'team' == $_POST['post_type'] ) {
+        if ( ! current_user_can( 'edit_post', $post_id ) ) {
+            return;
+        }
+    }
+
+    // Sanitize user input and save
+    if ( isset( $_POST['team_designation'] ) ) {
+        $designation = sanitize_text_field( $_POST['team_designation'] );
+        update_post_meta( $post_id, '_team_designation', $designation );
+    }
+    if ( isset( $_POST['team_linkedin'] ) ) {
+        $linkedin = esc_url_raw( $_POST['team_linkedin'] );
+        update_post_meta( $post_id, '_team_linkedin', $linkedin );
+    }
+}
+add_action( 'save_post', 'trust_habbits_save_team_meta_box_data' );
