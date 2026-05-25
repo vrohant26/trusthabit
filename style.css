@@ -427,9 +427,9 @@ ul {
 }
 
 .site-header.header-scrolled {
-  background-color: #ffffff28;
+  background-color: #ffffff;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* -webkit-backdrop-filter: blur(10px); */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -478,7 +478,24 @@ ul {
 .hero-section {
   position: relative;
   height: 100svh;
+}
 
+@media (max-width: 900px) {
+
+  .site-header:not(.header-scrolled) .logo-white {
+    filter: invert(0) !important;
+  }
+
+
+  .about-hero-bg {
+    margin-top: 4rem !important;
+  }
+
+  .hero-section {
+    height: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 @media (max-width: 1100px) {
