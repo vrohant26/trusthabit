@@ -174,7 +174,7 @@ function trust_habbits_submit_contact_form() {
     $country     = sanitize_text_field( $_POST['country'] ?? '' );
 
     // Build email
-    $to = 'villarosarohant@gmail.com';
+    $to = 'contact@trusthabit.com';
     $email_subject = 'New Contact Form Submission: ' . $subject;
     
     $message = "You have received a new contact message.\n\n";

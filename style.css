@@ -2,7 +2,7 @@
 Theme Name: Trust Habbit Custom Theme
 Description: Custom theme for Trust Habbits
 Author: Antigravity
-Version: 1.6
+Version: 1.7
 */
 
 @font-face {
@@ -925,7 +925,6 @@ ul {
   }
 
   .hero-grid {
-    padding-top: 100px;
     grid-template-columns: 1fr;
   }
 }
