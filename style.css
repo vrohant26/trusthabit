@@ -2,7 +2,7 @@
 Theme Name: Trust Habbit Custom Theme
 Description: Custom theme for Trust Habbits
 Author: Antigravity
-Version: 1.7
+Version: 1.9
 */
 
 @font-face {
@@ -899,6 +899,11 @@ ul {
 
 @media (max-width: 900px) {
 
+  .ff-title,
+  .ff-subtitle {
+    text-align: left;
+  }
+
   .cta-container {
     background: linear-gradient(180deg, var(--color-primary) 60%, #ffffff 100%) !important;
   }
@@ -907,9 +912,7 @@ ul {
     height: 110svh;
   }
 
-  .problem-section {
-    margin-top: 100px;
-  }
+
 
   .card-cost {
     top: 5%;
@@ -925,6 +928,8 @@ ul {
   }
 
   .hero-grid {
+    padding-top: 50px;
+    height: auto;
     grid-template-columns: 1fr;
   }
 }
@@ -1128,23 +1133,6 @@ ul {
     display: none;
   }
 
-  /* Text colour on light mobile background */
-  .ff-step-title {
-    color: var(--color-text-dark);
-  }
-
-  .ff-step-desc {
-    color: var(--color-text-muted);
-  }
-
-  .ff-badge {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-
-  .ff-bg {
-    background: linear-gradient(180deg, #ffffff 0%, #eef2fb 50%, #cad7f3 100%);
-  }
 }
 
 /* Problem Component Classes */
