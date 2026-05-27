@@ -18,11 +18,12 @@ get_header();
                     BUILT FOR GROWING TEAMS AND GLOBAL ENTERPRISES ALIKE.
                 </div>
                 <h1 class="hero-title text-4xl font-semibold leading-tight text-dark tracking-tight mb-md">
-                    <span class="text-primary">Cyber-resilience</span><br>
-                   through phishing simulations
+
+                  Measure, reduce & manage human  <span class="text-primary">cyber risk.</span>
                 </h1>
                 <p class="hero-subtitle text-lg text-muted leading-relaxed mb-lg">
-                    TrustHabit helps organizations reduce phishing risk by shaping secure behavior over time, not by overwhelming employees with one-time training.
+                    Trust Habit￼helps organizations reduce phishing risk through vulnerability detection, phishing simulations, and employee training
+
                 </p>
                 <a href="#" class="btn btn-outline border-primary text-primary font-medium text-lg rounded-sm inline-flex items-center justify-center px-lg py-md" style="padding: 0.75rem 1.5rem;">
                     Talk to sales
@@ -613,11 +614,7 @@ get_header();
                         </div>
                     </div>
 
-                    <!-- Right Column: Image -->
-                    <div class="cta-image-wrapper">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA.png" alt="TrustHabit Dashboard" class="cta-image">
                     </div>
-
                 </div>
             </div>
         </div>

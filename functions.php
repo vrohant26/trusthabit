@@ -147,3 +147,81 @@ function trust_habbits_save_team_meta_box_data( $post_id ) {
     }
 }
 add_action( 'save_post', 'trust_habbits_save_team_meta_box_data' );
+
+// ==========================================
+// Contact Form Handler
+// ==========================================
+function trust_habbits_submit_contact_form() {
+    // Verify nonce
+    if ( ! isset( $_POST['contact_nonce'] ) || ! wp_verify_nonce( $_POST['contact_nonce'], 'contact_form_nonce' ) ) {
+        wp_die( 'Security check failed.' );
+    }
+
+    // Sanitize input
+    $first_name  = sanitize_text_field( $_POST['first_name'] ?? '' );
+    $last_name   = sanitize_text_field( $_POST['last_name'] ?? '' );
+    $email       = sanitize_email( $_POST['email'] ?? '' );
+    $subject     = sanitize_text_field( $_POST['subject'] ?? '' );
+    $description = sanitize_textarea_field( $_POST['description'] ?? '' );
+    $country     = sanitize_text_field( $_POST['country'] ?? '' );
+
+    // Build email
+    $to = 'villarosarohant@gmail.com';
+    $email_subject = 'New Contact Form Submission: ' . $subject;
+    
+    $message = "You have received a new contact message.\n\n";
+    $message .= "Name: $first_name $last_name\n";
+    $message .= "Email: $email\n";
+    $message .= "Country: $country\n";
+    $message .= "Subject: $subject\n";
+    $message .= "Description:\n$description\n";
+
+    $headers = array(
+        'From: ' . $first_name . ' ' . $last_name . ' <' . $email . '>',
+        'Reply-To: ' . $email,
+    );
+
+    $attachments = array();
+
+    // Handle attachment
+    if ( isset( $_FILES['attachment'] ) && $_FILES['attachment']['error'] === UPLOAD_ERR_OK ) {
+        $uploaded_file = $_FILES['attachment'];
+        
+        // Basic file upload handling for email attachment
+        if ( ! function_exists( 'wp_handle_upload' ) ) {
+            require_once( ABSPATH . 'wp-admin/includes/file.php' );
+        }
+
+        $upload_overrides = array( 'test_form' => false );
+        $movefile = wp_handle_upload( $uploaded_file, $upload_overrides );
+
+        if ( $movefile && ! isset( $movefile['error'] ) ) {
+            $attachments[] = $movefile['file'];
+        }
+    }
+
+    // Send email
+    $sent = wp_mail( $to, $email_subject, $message, $headers, $attachments );
+
+    // Optional: Clean up uploaded file after sending if it was attached
+    if ( ! empty( $attachments ) ) {
+        foreach ( $attachments as $attachment ) {
+            @unlink( $attachment );
+        }
+    }
+
+    // Redirect back with status
+    $redirect_url = get_permalink( get_page_by_path( 'contact' ) ); // Assuming slug is 'contact'
+    if ( ! $redirect_url ) {
+        $redirect_url = home_url( '/contact' );
+    }
+
+    if ( $sent ) {
+        wp_redirect( add_query_arg( 'success', '1', $redirect_url ) );
+    } else {
+        wp_redirect( add_query_arg( 'error', '1', $redirect_url ) );
+    }
+    exit;
+}
+add_action( 'admin_post_nopriv_submit_contact_form', 'trust_habbits_submit_contact_form' );
+add_action( 'admin_post_submit_contact_form', 'trust_habbits_submit_contact_form' );

@@ -13,9 +13,8 @@
             <!-- Left Side -->
             <div class="footer-left">
                 <h2 class="footer-heading font-heading">
-                    Trusted by <br>
-                    <span class="text-primary">security teams</span> across <br>
-                    regions and industries.
+                    Turning
+                    <span class="text-primary">phishing simulations</span> into measurable risk reduction
                 </h2>
                 <div class="footer-cta-group">
                      

@@ -27,25 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof SplitText !== "undefined") plugins.push(SplitText);
   gsap.registerPlugin(...plugins);
 
-  // Hero entrance — left then right
-  if (
-    document.querySelector(".hero-content") &&
-    document.querySelector(".hero-visuals")
-  ) {
-    gsap
-      .timeline({ delay: 0.2 })
-      .to(".hero-content", {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-      })
-      .to(
-        ".hero-visuals",
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
-        "-=0.75",
-      );
-  }
+  // Hero entrance animation removed as per request
 
   // Exclamation glow — bento cards
   document.querySelectorAll(".exclamation-glow").forEach((el) => {
@@ -87,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
           start: "top top",
           end: "+=100%",
           scrub: 1,
-          pin: true,
         },
       })
       .to(".animated-logo-text", { color: "#26529B", duration: 1 }, 0)
@@ -127,19 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ── Features Flow (Section 5) ──────────────────────────────────────────
-  gsap.utils.toArray(".ff-row").forEach((row) => {
-    gsap.to(row, {
-      opacity: 1,
-      y: 0,
-      duration: 1.1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: row,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-    });
-  });
+  // Row fade-in animation removed as per request
 
   // SVG connecting lines
   const ffRows = document.getElementById("ff-rows");
@@ -262,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================================================================
      SWIPER INITIALIZATIONS
      ========================================================================= */
-  
+
   if (typeof Swiper !== "undefined") {
     new Swiper(".team-swiper", {
       slidesPerView: 1.2,
@@ -283,37 +252,36 @@ document.addEventListener("DOMContentLoaded", () => {
         1100: {
           slidesPerView: 4,
           spaceBetween: 40,
-        }
-      }
+        },
+      },
     });
   }
-
 });
 
 // Mobile Menu Toggle
 document.addEventListener("DOMContentLoaded", function () {
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+  const mobileMenuOverlay = document.querySelector(".mobile-menu-overlay");
 
   if (mobileMenuToggle && mobileMenuOverlay) {
-    mobileMenuToggle.addEventListener('click', function() {
-      this.classList.toggle('active');
-      mobileMenuOverlay.classList.toggle('active');
-      
-      if (this.classList.contains('active')) {
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    mobileMenuToggle.addEventListener("click", function () {
+      this.classList.toggle("active");
+      mobileMenuOverlay.classList.toggle("active");
+
+      if (this.classList.contains("active")) {
+        document.body.style.overflow = "hidden"; // Prevent scrolling
       } else {
-        document.body.style.overflow = '';
+        document.body.style.overflow = "";
       }
     });
-    
+
     // Close menu when a link is clicked
-    const mobileLinks = mobileMenuOverlay.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuToggle.classList.remove('active');
-        mobileMenuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+    const mobileLinks = mobileMenuOverlay.querySelectorAll("a");
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenuToggle.classList.remove("active");
+        mobileMenuOverlay.classList.remove("active");
+        document.body.style.overflow = "";
       });
     });
   }
