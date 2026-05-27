@@ -113,6 +113,12 @@ get_header();
                     </div>
                     <div id="file-name-display" class="file-name-display"></div>
 
+                    <!-- Honeypot for Spam Protection -->
+                    <div style="display: none; position: absolute; left: -9999px;" aria-hidden="true">
+                        <label for="user_website">Website</label>
+                        <input type="text" name="user_website" id="user_website" autocomplete="off" tabindex="-1">
+                    </div>
+
                     <!-- Submit -->
                     <div class="form-submit mt-sm">
                         <button type="submit" class="btn btn-primary bg-primary text-white font-medium rounded-sm btn-submit">

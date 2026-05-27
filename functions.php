@@ -157,6 +157,14 @@ function trust_habbits_submit_contact_form() {
         wp_die( 'Security check failed.' );
     }
 
+    // Check Honeypot for spam protection
+    if ( ! empty( $_POST['user_website'] ) ) {
+        // A bot filled out the hidden field. Fail silently.
+        $redirect_url = get_permalink( get_page_by_path( 'contact' ) ) ?: home_url( '/contact' );
+        wp_redirect( add_query_arg( 'success', '1', $redirect_url ) );
+        exit;
+    }
+
     // Sanitize input
     $first_name  = sanitize_text_field( $_POST['first_name'] ?? '' );
     $last_name   = sanitize_text_field( $_POST['last_name'] ?? '' );
@@ -176,9 +184,10 @@ function trust_habbits_submit_contact_form() {
     $message .= "Subject: $subject\n";
     $message .= "Description:\n$description\n";
 
+    $site_title = get_bloginfo( 'name' );
     $headers = array(
-        'From: ' . $first_name . ' ' . $last_name . ' <' . $email . '>',
-        'Reply-To: ' . $email,
+        'From: ' . $site_title . ' Contact Form <wordpress@' . parse_url( home_url(), PHP_URL_HOST ) . '>',
+        'Reply-To: ' . $first_name . ' ' . $last_name . ' <' . $email . '>',
     );
 
     $attachments = array();
