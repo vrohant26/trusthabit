@@ -68,7 +68,7 @@ get_header();
                     </div>
                 <?php endif; ?>
 
-                <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST" enctype="multipart/form-data" class="contact-form flex flex-column gap-sm">
+                <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST" class="contact-form flex flex-column gap-sm">
                     <input type="hidden" name="action" value="submit_contact_form">
                     <?php wp_nonce_field( 'contact_form_nonce', 'contact_nonce' ); ?>
 
@@ -102,16 +102,6 @@ get_header();
                         <input type="text" name="country" placeholder="Requester Country*" required class="form-input">
                     </div>
 
-                    <!-- Attachments -->
-                    <div class="form-group file-upload-group flex items-center justify-between form-input">
-                        <span class="file-label-text">Attachments (Optional)</span>
-                        <label for="attachment" class="file-upload-btn">
-                            <span>Add File</span>
-                            <span class="file-upload-hint">or drop files here</span>
-                        </label>
-                        <input type="file" id="attachment" name="attachment" class="hidden-file-input" style="display: none;">
-                    </div>
-                    <div id="file-name-display" class="file-name-display"></div>
 
                     <!-- Honeypot for Spam Protection -->
                     <div style="display: none; position: absolute; left: -9999px;" aria-hidden="true">
@@ -133,22 +123,6 @@ get_header();
 
 </main>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const fileInput = document.getElementById('attachment');
-    const fileNameDisplay = document.getElementById('file-name-display');
-    
-    if (fileInput && fileNameDisplay) {
-        fileInput.addEventListener('change', function() {
-            if (this.files && this.files.length > 0) {
-                fileNameDisplay.textContent = 'Selected: ' + this.files[0].name;
-                fileNameDisplay.style.display = 'block';
-            } else {
-                fileNameDisplay.style.display = 'none';
-            }
-        });
-    }
-});
-</script>
+
 
 <?php get_footer(); ?>

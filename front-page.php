@@ -144,7 +144,7 @@ get_header();
 
                 <!-- Right Visual -->
                 <div class="problem-visual">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/problem.png" alt="Cybersecurity Problem Graph" class="problem-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/problem.webp" alt="Cybersecurity Problem Graph" class="problem-image">
                 </div>
                 
             </div>

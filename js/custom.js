@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .timeline({
         scrollTrigger: {
           trigger: logoSection,
-          start: "top top",
-          end: "+=100%",
+          start: "top 20%",
+          end: "+=20%",
           scrub: 1,
         },
       })

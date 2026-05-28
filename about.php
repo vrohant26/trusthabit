@@ -41,8 +41,8 @@ get_header();
             </div>
 
             <!-- Right Visual -->
-            <div class="hero-visuals" style="position: relative;">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Partnership.webp" alt="TrustHabit Partnership" class="about-hero-img">
+            <div class="hero-visuals" style="position: relative; ">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.jpg" alt="TrustHabit Partnership" class="about-hero-img">
                 
                 <!-- Invisible Click Overlays for the single image -->
                 <a href="https://valencynetworks.com/" target="_blank" rel="noopener noreferrer" style="position: absolute; top: 5%; left: 5%; width: 45%; height: 50%; z-index: 10;" aria-label="Visit Valency Networks"></a>

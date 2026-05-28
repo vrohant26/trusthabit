@@ -190,34 +190,8 @@ function trust_habbits_submit_contact_form() {
         'Reply-To: ' . $first_name . ' ' . $last_name . ' <' . $email . '>',
     );
 
-    $attachments = array();
-
-    // Handle attachment
-    if ( isset( $_FILES['attachment'] ) && $_FILES['attachment']['error'] === UPLOAD_ERR_OK ) {
-        $uploaded_file = $_FILES['attachment'];
-        
-        // Basic file upload handling for email attachment
-        if ( ! function_exists( 'wp_handle_upload' ) ) {
-            require_once( ABSPATH . 'wp-admin/includes/file.php' );
-        }
-
-        $upload_overrides = array( 'test_form' => false );
-        $movefile = wp_handle_upload( $uploaded_file, $upload_overrides );
-
-        if ( $movefile && ! isset( $movefile['error'] ) ) {
-            $attachments[] = $movefile['file'];
-        }
-    }
-
     // Send email
-    $sent = wp_mail( $to, $email_subject, $message, $headers, $attachments );
-
-    // Optional: Clean up uploaded file after sending if it was attached
-    if ( ! empty( $attachments ) ) {
-        foreach ( $attachments as $attachment ) {
-            @unlink( $attachment );
-        }
-    }
+    $sent = wp_mail( $to, $email_subject, $message, $headers );
 
     // Redirect back with status
     $redirect_url = get_permalink( get_page_by_path( 'contact' ) ); // Assuming slug is 'contact'

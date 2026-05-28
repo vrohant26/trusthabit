@@ -2,7 +2,7 @@
 Theme Name: Trust Habbit Custom Theme
 Description: Custom theme for Trust Habbits
 Author: Antigravity
-Version: 1.9
+Version: 2.1
 */
 
 @font-face {
@@ -594,6 +594,7 @@ ul {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 24px;
 }
 
 @media (max-width: 900px) {
@@ -904,9 +905,6 @@ ul {
     text-align: left;
   }
 
-  .cta-container {
-    background: linear-gradient(180deg, var(--color-primary) 60%, #ffffff 100%) !important;
-  }
 
   .gradient {
     height: 110svh;
@@ -928,7 +926,7 @@ ul {
   }
 
   .hero-grid {
-    padding-top: 50px;
+    padding-top: 25px;
     height: auto;
     grid-template-columns: 1fr;
   }
@@ -1814,6 +1812,17 @@ ul {
 }
 
 @media (max-width: 900px) {
+
+  .ff-bg,
+  .roots-section-wrapper.bg-primary-container {
+
+    background: var(--color-primary) !important;
+
+  }
+
+  .ff-section * {
+    color: white;
+  }
 
   .audience-grid,
   .infrastructure-grid,
