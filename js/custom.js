@@ -246,11 +246,11 @@ document.addEventListener("DOMContentLoaded", () => {
           spaceBetween: 20,
         },
         900: {
-          slidesPerView: 3,
+          slidesPerView: 3.2,
           spaceBetween: 30,
         },
         1100: {
-          slidesPerView: 4,
+          slidesPerView: 4.2,
           spaceBetween: 40,
         },
       },
