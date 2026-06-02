@@ -264,7 +264,7 @@ ul {
 }
 
 .mb-md {
-  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: clamp(2.5rem, 2vw, 1.5rem);
 }
 
 .mb-lg {
@@ -276,7 +276,7 @@ ul {
 }
 
 .pt-32 {
-  padding-top: clamp(6rem, 10vw, 8rem);
+  padding-top: clamp(4rem, 10vw, 8rem);
 }
 
 .pb-24 {
@@ -654,7 +654,7 @@ ul {
 
 .roots-section-wrapper {
   padding-top: clamp(4rem, 8vw, 6rem);
-  padding-bottom: clamp(4rem, 8vw, 6rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem) !important;
 }
 
 .roots-section-wrapper.bg-primary-container {
@@ -975,7 +975,7 @@ ul {
 /* Section wrapper */
 .ff-section {
   position: relative;
-  padding: clamp(6rem, 10vw, 8rem) 0 clamp(7rem, 12vw, 10rem);
+  padding: clamp(4rem, 10vw, 8rem) 0 clamp(4rem, 12vw, 10rem);
   overflow: hidden;
 }
 
@@ -1423,6 +1423,7 @@ ul {
   font-weight: 500;
   color: var(--color-text-dark);
   margin-bottom: 2.5rem;
+
 }
 
 .footer-cta-group {
@@ -1592,7 +1593,7 @@ ul {
 }
 
 .animated-logo-text {
-  font-size: clamp(4rem, 8vw, 8rem);
+  font-size: clamp(3rem, 8vw, 8rem);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -1733,7 +1734,7 @@ ul {
 .infra-card-icon {
   width: clamp(60px, 8vw, 80px);
   height: clamp(60px, 8vw, 80px);
-  margin: 0 auto 2rem;
+  margin-bottom: 2rem;
   display: block;
 }
 
@@ -1813,6 +1814,14 @@ ul {
 
 @media (max-width: 900px) {
 
+  .footer-heading {
+    margin-top: 2.5rem;
+  }
+
+  .footer-top-banner {
+    display: none;
+  }
+
   .ff-bg,
   .roots-section-wrapper.bg-primary-container,
   .aud-sec.bg-primary-container {
@@ -1832,7 +1841,8 @@ ul {
     gap: 1rem;
   }
 
-  .infra-title-block {
+  .infra-title-block,
+  .audience-left {
     margin-bottom: 3rem;
   }
 

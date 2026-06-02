@@ -24,7 +24,7 @@ get_header();
                 </h1>
                 
                 <p class="hero-subtitle text-lg leading-relaxed mb-lg about-subtitle">
-                    Combining deep cybersecurity expertise with<br>
+                    Combining deep cybersecurity expertise with 
                     strong product development capabilities.
                 </p>
 
@@ -42,7 +42,7 @@ get_header();
 
             <!-- Right Visual -->
             <div class="hero-visuals" style="position: relative; ">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Partnership.webp" alt="TrustHabit Partnership" class="about-hero-img">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Partnership.webp" alt="Trust Habit Partnership" class="about-hero-img">
                 
                 <!-- Invisible Click Overlays for the single image -->
                 <a href="https://valencynetworks.com/" target="_blank" rel="noopener noreferrer" style="position: absolute; top: 5%; left: 5%; width: 45%; height: 50%; z-index: 10;" aria-label="Visit Valency Networks"></a>
@@ -141,7 +141,7 @@ get_header();
                     Built on deep<br>security expertise.
                 </h2>
                 <p class="text-center mx-auto" style="color: #c4d7f5; max-width: 800px; font-size: 1.1rem; line-height: 1.6;">
-                    TrustHabit is developed with the backing and expertise of Valency Networks, a cybersecurity firm with over 15 years of experience securing complex digital environments across industries.
+                    Trust Habit is developed with the backing and expertise of Valency Networks, a cybersecurity firm with over 15 years of experience securing complex digital environments across industries.
                 </p>
             </div>
 
@@ -176,7 +176,7 @@ get_header();
             </div>
             
             <p class="text-center mx-auto" style="color: #c4d7f5; font-size: 1.15rem; max-width: 600px; line-height: 1.5; margin-top: 3rem;">
-                <span class="text-white font-medium">This Experience Shapes How TrustHabit Is Designed:</span><br>
+                <span class="text-white font-medium">This Experience Shapes How Trust Habit Is Designed:</span>
                 Calm, Precise, Ethical, And Grounded In Reality.
             </p>
         </div>
@@ -185,7 +185,7 @@ get_header();
   
 
     <!-- Principles Section -->
-    <section class="container principles-section px-container" style="padding-top: clamp(5rem, 10vw, 8rem); padding-bottom: clamp(6rem, 10vw, 8rem);">
+    <section class="container principles-section px-container" style="padding-top: clamp(6rem, 10vw, 8rem); padding-bottom: clamp(4rem, 10vw, 8rem);">
         
         <!-- Header Row -->
         <div class="principles-row" style="margin-bottom: clamp(3rem, 6vw, 5rem);">
@@ -200,7 +200,7 @@ get_header();
                     <span class="text-primary">Principles</span> That Guide Every Decision We Make
                 </h2>
                 <p class="text-muted leading-relaxed" style="font-size: 1.1rem; max-width: 650px; margin: 0;">
-                    Our principles define how TrustHabit is built and how it's used. They ensure security is ethical, human-centered, transparent, and effective in real-world conditions-not just on paper.
+                    Our principles define how Trust Habit is built and how it's used. They ensure security is ethical, human-centered, transparent, and effective in real-world conditions-not just on paper.
                 </p>
             </div>
         </div>
@@ -262,7 +262,7 @@ get_header();
         </div>
     </section>
 
-       <section class="cta-section" style="padding-top: clamp(2rem, 4vw, 4rem); padding-bottom: clamp(4rem, 8vw, 6rem);">
+       <section class="cta-section" style="padding-top: clamp(2rem, 4vw, 4rem);">
         <div class="container px-container">
             <div class="cta-container">
                 <div class="cta-grid">
@@ -278,10 +278,10 @@ get_header();
                                 Start building cyber resilience today
                             </h2>
                             <p class="cta-desc text-white mb-lg">
-                                See how TrustHabit helps your organization understand, improve, and sustain secure behavior.
+                                See how Trust Habit helps your organization understand, improve, and sustain secure behavior.
                             </p>
                             <div class="cta-actions flex items-center gap-md">
-                                <a href="<?php echo esc_url( home_url( '/demo' ) ); ?>" class="btn btn-white bg-white text-primary font-medium text-base rounded-sm inline-flex items-center gap-sm" style="padding: 0.5rem 0.5rem 0.5rem 1.25rem;">
+                                <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-white bg-white text-primary font-medium text-base rounded-sm inline-flex items-center gap-sm" style="padding: 0.5rem 0.5rem 0.5rem 1.25rem;">
                                     Request a demo
                                     <span class="btn-icon icon-box bg-primary text-white rounded-sm flex items-center justify-center" style="width: 32px; height: 32px; margin-left: 0.5rem;">
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -290,9 +290,7 @@ get_header();
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-outline border-white text-white font-medium text-base rounded-sm inline-flex items-center justify-center" style="border-color: rgba(255,255,255,0.5); background: transparent; padding: 0.75rem 1.5rem;">
-                                    Talk to sales
-                                </a>
+                               
                             </div>
                         </div>
                     </div>

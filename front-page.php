@@ -113,7 +113,7 @@ get_header();
                     </div>
                     
                     <h2 class="problem-title">
-                       $16B+ <br>
+                       $16 Billion + <br>
                        Lost to Internet Crime
                     </h2>
 
@@ -130,7 +130,7 @@ get_header();
                     <div class="flex items-center gap-lg mt-md">
                 
                         
-                        <a href="https://www.fbi.gov/news/press-releases/fbi-releases-annual-internet-crime-report" target="_blank" class="link-with-icon">
+                        <a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" target="_blank" class="link-with-icon">
                             See FBI Report 
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -251,12 +251,9 @@ get_header();
       <!-- Fourth Section: Mission -->
     <section class="mission-section">
         <div class="container px-container">
-            <div class="mission-badge">
-                <span class="mission-badge-dot"></span>
-                OUR MISSION.
-            </div>
+         
             <h2 class="mission-statement font-heading">
-                We built Trust Habit to be a globally trusted cyber-resilience layer for organizations of all sizes. A platform that grows with teams, adapts to real-world behavior, and helps security become instinct, not effort.
+                Your employees are your most unpredictable attack surface. Trust Habit helps you measure, expose, and reduce human phishing risk before attackers exploit them.
             </h2>
         </div>
     </section>
@@ -272,7 +269,7 @@ get_header();
             <!-- Header -->
             <div class="ff-header">
                 <h2 class="ff-title  font-heading">
-                    <span class="text-primary">TrustHabit</span> Helps Organizations<br>
+                    <span class="text-primary">Trust Habit</span> Helps Organizations<br>
                     Understand and Outsmart<br>
                     Phishing Risks
                 </h2>
@@ -400,7 +397,7 @@ get_header();
                         seriously
                     </h2>
                     <p class="audience-desc mb-lg">
-                        TrustHabit works best for teams who understand that security awareness isn't just about training completion rates—it's about lasting behavior change. If you're looking to move beyond checkbox compliance and build a security culture grounded in real data and continuous improvement, you're in the right place.
+                        Trust Habit works best for teams who understand that security awareness isn't just about training completion rates—it's about lasting behavior change. If you're looking to move beyond checkbox compliance and build a security culture grounded in real data and continuous improvement, you're in the right place.
                     </p>
                     <a href="#" class="btn btn-outline text-primary font-medium text-base rounded-sm inline-flex items-center gap-lg mt-md">
                         See Our Technology
@@ -577,7 +574,7 @@ get_header();
     </section>
 
     <!-- Eighth Section: CTA -->
-    <section class="cta-section" style="padding-bottom: clamp(4rem, 8vw, 6rem);">
+    <section class="cta-section">
         <div class="container px-container">
             <div class="cta-container">
                 <div class="cta-grid">
@@ -593,7 +590,7 @@ get_header();
                                 Start building cyber resilience today
                             </h2>
                             <p class="cta-desc text-white mb-lg">
-                                See how TrustHabit helps your organization understand, improve, and sustain secure behavior.
+                                See how Trust Habit helps your organization understand, improve, and sustain secure behavior.
                             </p>
                             <div class="cta-actions flex items-center gap-md">
                                 <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-white bg-white text-primary font-medium text-base rounded-sm inline-flex items-center gap-sm" style="padding: 0.5rem 0.5rem 0.5rem 1.25rem;">
