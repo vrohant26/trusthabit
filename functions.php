@@ -208,3 +208,201 @@ function trust_habbits_submit_contact_form() {
 }
 add_action( 'admin_post_nopriv_submit_contact_form', 'trust_habbits_submit_contact_form' );
 add_action( 'admin_post_submit_contact_form', 'trust_habbits_submit_contact_form' );
+
+// ==========================================
+// FAQ Native Meta Box & Editor Setup
+// ==========================================
+
+function trust_habbits_remove_editor_from_faq() {
+    if ( isset( $_GET['post'] ) ) {
+        $post_id = $_GET['post'];
+    } elseif ( isset( $_POST['post_ID'] ) ) {
+        $post_id = $_POST['post_ID'];
+    } else {
+        return;
+    }
+
+    $template_file = get_post_meta( $post_id, '_wp_page_template', true );
+
+    if ( $template_file == 'faq.php' ) {
+        remove_post_type_support( 'page', 'editor' );
+    }
+}
+add_action( 'admin_init', 'trust_habbits_remove_editor_from_faq' );
+
+function trust_habbits_add_faq_meta_box() {
+    add_meta_box(
+        'trust_habbits_faq_meta_box',
+        'FAQ Groups & Questions',
+        'trust_habbits_faq_meta_box_html',
+        'page',
+        'normal',
+        'high'
+    );
+}
+add_action( 'add_meta_boxes', 'trust_habbits_add_faq_meta_box' );
+
+function trust_habbits_faq_meta_box_html( $post ) {
+    wp_nonce_field( 'trust_habbits_faq_nonce', 'trust_habbits_faq_nonce' );
+    $faq_data = get_post_meta( $post->ID, '_faq_data', true );
+    if ( ! is_array( $faq_data ) ) {
+        $faq_data = array();
+    }
+    ?>
+    <style>
+        .faq-admin-wrap { max-width: 800px; }
+        .faq-group-box { border: 1px solid #ccd0d4; background: #fff; margin-bottom: 20px; box-shadow: 0 1px 1px rgba(0,0,0,.04); }
+        .faq-group-header { padding: 10px 15px; border-bottom: 1px solid #ccd0d4; background: #f9f9f9; display: flex; justify-content: space-between; align-items: center; }
+        .faq-group-header input { font-size: 16px; width: 60%; font-weight: bold; }
+        .faq-group-body { padding: 15px; }
+        .faq-question-box { border: 1px solid #e2e4e7; background: #fafafa; padding: 15px; margin-bottom: 10px; position: relative; }
+        .faq-question-box input { width: 100%; margin-bottom: 10px; font-weight: bold; }
+        .faq-question-box textarea { width: 100%; min-height: 80px; }
+        .remove-btn { color: #d63638; cursor: pointer; text-decoration: underline; font-size: 13px; }
+        .remove-btn:hover { color: #d63638; text-decoration: none; }
+        .faq-question-remove { position: absolute; top: 15px; right: 15px; }
+    </style>
+
+    <div class="faq-admin-wrap" id="faq-admin-wrap">
+        <div id="faq-groups-container">
+            <?php 
+            $group_index = 0;
+            foreach ( $faq_data as $group ) : 
+                $group_title = isset( $group['title'] ) ? esc_attr( $group['title'] ) : '';
+                $questions = isset( $group['questions'] ) && is_array( $group['questions'] ) ? $group['questions'] : array();
+            ?>
+                <div class="faq-group-box" data-group-index="<?php echo $group_index; ?>">
+                    <div class="faq-group-header">
+                        <input type="text" name="faq_data[<?php echo $group_index; ?>][title]" value="<?php echo $group_title; ?>" placeholder="Group Title (e.g. General Questions)">
+                        <span class="remove-btn remove-group">Remove Group</span>
+                    </div>
+                    <div class="faq-group-body">
+                        <div class="faq-questions-container">
+                            <?php 
+                            $q_index = 0;
+                            foreach ( $questions as $q ) : 
+                                $question_text = isset( $q['q'] ) ? esc_attr( $q['q'] ) : '';
+                                $answer_text = isset( $q['a'] ) ? esc_textarea( $q['a'] ) : '';
+                            ?>
+                                <div class="faq-question-box" data-q-index="<?php echo $q_index; ?>">
+                                    <span class="remove-btn remove-question faq-question-remove">Remove</span>
+                                    <label>Question</label>
+                                    <input type="text" name="faq_data[<?php echo $group_index; ?>][questions][<?php echo $q_index; ?>][q]" value="<?php echo $question_text; ?>">
+                                    <label>Answer</label>
+                                    <textarea name="faq_data[<?php echo $group_index; ?>][questions][<?php echo $q_index; ?>][a]"><?php echo $answer_text; ?></textarea>
+                                </div>
+                            <?php 
+                            $q_index++;
+                            endforeach; 
+                            ?>
+                        </div>
+                        <button type="button" class="button add-question-btn">Add Question to this Group</button>
+                    </div>
+                </div>
+            <?php 
+            $group_index++;
+            endforeach; 
+            ?>
+        </div>
+        <button type="button" class="button button-primary button-large" id="add-group-btn" style="margin-top: 10px;">Add New Group</button>
+    </div>
+
+    <script>
+    jQuery(document).ready(function($) {
+        var groupIndex = <?php echo max( 0, $group_index ); ?>;
+
+        // Add Group
+        $('#add-group-btn').on('click', function() {
+            var html = '<div class="faq-group-box" data-group-index="' + groupIndex + '">' +
+                '<div class="faq-group-header">' +
+                    '<input type="text" name="faq_data[' + groupIndex + '][title]" value="" placeholder="Group Title (e.g. General Questions)">' +
+                    '<span class="remove-btn remove-group">Remove Group</span>' +
+                '</div>' +
+                '<div class="faq-group-body">' +
+                    '<div class="faq-questions-container"></div>' +
+                    '<button type="button" class="button add-question-btn">Add Question to this Group</button>' +
+                '</div>' +
+            '</div>';
+            $('#faq-groups-container').append(html);
+            groupIndex++;
+        });
+
+        // Add Question
+        $(document).on('click', '.add-question-btn', function() {
+            var $group = $(this).closest('.faq-group-box');
+            var gIdx = $group.data('group-index');
+            var $container = $group.find('.faq-questions-container');
+            var qIdx = $container.find('.faq-question-box').length;
+            
+            // To ensure unique indexes if they delete some
+            qIdx = qIdx + Math.floor(Math.random() * 1000);
+
+            var html = '<div class="faq-question-box" data-q-index="' + qIdx + '">' +
+                '<span class="remove-btn remove-question faq-question-remove">Remove</span>' +
+                '<label>Question</label>' +
+                '<input type="text" name="faq_data[' + gIdx + '][questions][' + qIdx + '][q]" value="">' +
+                '<label>Answer</label>' +
+                '<textarea name="faq_data[' + gIdx + '][questions][' + qIdx + '][a]"></textarea>' +
+            '</div>';
+            $container.append(html);
+        });
+
+        // Remove Group
+        $(document).on('click', '.remove-group', function() {
+            if ( confirm('Are you sure you want to remove this entire group?') ) {
+                $(this).closest('.faq-group-box').remove();
+            }
+        });
+
+        // Remove Question
+        $(document).on('click', '.remove-question', function() {
+            if ( confirm('Remove this question?') ) {
+                $(this).closest('.faq-question-box').remove();
+            }
+        });
+    });
+    </script>
+    <?php
+}
+
+function trust_habbits_save_faq_meta_box( $post_id ) {
+    if ( ! isset( $_POST['trust_habbits_faq_nonce'] ) || ! wp_verify_nonce( $_POST['trust_habbits_faq_nonce'], 'trust_habbits_faq_nonce' ) ) {
+        return;
+    }
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+
+    if ( isset( $_POST['faq_data'] ) && is_array( $_POST['faq_data'] ) ) {
+        $sanitized_data = array();
+        
+        // Re-index numerically and sanitize
+        foreach ( $_POST['faq_data'] as $group ) {
+            $sanitized_group = array(
+                'title' => sanitize_text_field( $group['title'] ?? '' ),
+                'questions' => array()
+            );
+
+            if ( isset( $group['questions'] ) && is_array( $group['questions'] ) ) {
+                foreach ( $group['questions'] as $q ) {
+                    $sanitized_group['questions'][] = array(
+                        'q' => sanitize_text_field( $q['q'] ?? '' ),
+                        'a' => wp_kses_post( $q['a'] ?? '' ), // Allow basic HTML in answers
+                    );
+                }
+            }
+
+            // Only save group if it has a title or questions
+            if ( ! empty( $sanitized_group['title'] ) || ! empty( $sanitized_group['questions'] ) ) {
+                $sanitized_data[] = $sanitized_group;
+            }
+        }
+        update_post_meta( $post_id, '_faq_data', $sanitized_data );
+    } else {
+        delete_post_meta( $post_id, '_faq_data' );
+    }
+}
+add_action( 'save_post', 'trust_habbits_save_faq_meta_box' );

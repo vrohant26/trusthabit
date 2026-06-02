@@ -40,6 +40,7 @@
                         <!-- <li><a href="<?php echo esc_url( home_url( '/features' ) ); ?>">Features</a></li> -->
                         <li class="<?php echo is_page('about') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a> <?php if(is_page('about')) echo '<span class="nav-dot"></span>'; ?></li>
                         <!-- <li><a href="<?php echo esc_url( home_url( '/pricing' ) ); ?>">Pricing</a></li> -->
+                        <li class="<?php echo is_page('faq') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/faq' ) ); ?>">FAQ</a> <?php if(is_page('faq')) echo '<span class="nav-dot"></span>'; ?></li>
                         <li class="<?php echo is_page('contact') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact Us</a> <?php if(is_page('contact')) echo '<span class="nav-dot"></span>'; ?></li>
                         <!-- <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li> -->
                     </ul>

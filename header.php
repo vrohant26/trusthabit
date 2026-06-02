@@ -33,6 +33,7 @@
                 <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex">About</a></li>
                 <!-- <li><a href="<?php echo esc_url( home_url( '/features' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-pill inline-flex">Features</a></li> -->
                 <!-- <li><a href="<?php echo esc_url( home_url( '/pricing' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-pill inline-flex">Pricing</a></li> -->
+                <li><a href="<?php echo esc_url( home_url( '/faq' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex">FAQ</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex">Contact</a></li>
             </ul>
         </nav>
@@ -65,6 +66,7 @@
         <ul class="mobile-nav-menu">
             <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
             <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/faq' ) ); ?>">FAQ</a></li>
             <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
         </ul>
         <div class="mobile-menu-cta mt-lg">
