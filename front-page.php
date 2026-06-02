@@ -25,7 +25,7 @@ get_header();
                     Trust Habit￼helps organizations reduce phishing risk through vulnerability detection, phishing simulations, and employee training
 
                 </p>
-                <a href="#" class="btn btn-outline border-primary text-primary font-medium text-lg rounded-sm inline-flex items-center justify-center px-lg py-md" style="padding: 0.75rem 1.5rem;">
+                <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-outline border-primary text-primary font-medium text-lg rounded-sm inline-flex items-center justify-center px-lg py-md" style="padding: 0.75rem 1.5rem;">
                     Talk to sales
                 </a>
             </div>
@@ -128,11 +128,9 @@ get_header();
                    
                     
                     <div class="flex items-center gap-lg mt-md">
-                      <a href="#" class="btn btn-outline border-primary text-primary font-medium text-base rounded-sm inline-flex items-center justify-center" style="padding: 0.75rem 1.5rem;">
-                    Know More
-                </a>
+                
                         
-                        <a href="#" class="link-with-icon">
+                        <a href="https://www.fbi.gov/news/press-releases/fbi-releases-annual-internet-crime-report" target="_blank" class="link-with-icon">
                             See FBI Report 
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -367,7 +365,7 @@ get_header();
         </div>
     </section>
 
-    <!-- Sixth Section: Logo Animation -->
+    <!-- fifth Section: Logo Animation -->
     <section class="logo-animation-section flex items-center justify-center">
         <div class="animated-logo-content flex items-center gap-md">
             <div class="animated-logo-icon bg-gray-light text-white rounded-sm flex items-center justify-center">
@@ -515,7 +513,7 @@ get_header();
                 
                 <!-- Top Left: Title Block -->
                 <div class="infra-title-block flex flex-column justify-center">
-                    <div>
+                    <div >
                         <div class="problem-badge mb-sm" style="background-color: #f1f5f9; color: #64748b;">
                             <span class="problem-badge-dot badge-dot-blue"></span>
                             TRUST AND ASSURANCE
@@ -562,7 +560,7 @@ get_header();
                         <p class="infra-desc text-muted mb-lg">
                             Your security team will ask the right questions about any new platform. <strong class="text-primary font-semibold">trust habit</strong> is designed to pass those reviews. Built for regulated environments with enterprise-grade infrastructure, transparent data practices, and the controls your organization requires.
                         </p>
-                           <a href="<?php echo esc_url( home_url( '/demo' ) ); ?>" class="btn btn-primary bg-primary text-white font-medium text-base rounded-sm inline-flex items-center gap-sm">
+                           <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-primary bg-primary text-white font-medium text-base rounded-sm inline-flex items-center gap-sm">
                Talk to Expert
                 <span class="btn-icon icon-box icon-lg bg-white text-primary rounded-sm">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -598,7 +596,7 @@ get_header();
                                 See how TrustHabit helps your organization understand, improve, and sustain secure behavior.
                             </p>
                             <div class="cta-actions flex items-center gap-md">
-                                <a href="<?php echo esc_url( home_url( '/demo' ) ); ?>" class="btn btn-white bg-white text-primary font-medium text-base rounded-sm inline-flex items-center gap-sm" style="padding: 0.5rem 0.5rem 0.5rem 1.25rem;">
+                                <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-white bg-white text-primary font-medium text-base rounded-sm inline-flex items-center gap-sm" style="padding: 0.5rem 0.5rem 0.5rem 1.25rem;">
                                     Request a demo
                                     <span class="btn-icon icon-box bg-primary text-white rounded-sm flex items-center justify-center" style="width: 32px; height: 32px; margin-left: 0.5rem;">
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -607,9 +605,7 @@ get_header();
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-outline border-white text-white font-medium text-base rounded-sm inline-flex items-center justify-center" style="border-color: rgba(255,255,255,0.5); background: transparent; padding: 0.75rem 1.5rem;">
-                                    Talk to sales
-                                </a>
+                             
                             </div>
                         </div>
                     </div>

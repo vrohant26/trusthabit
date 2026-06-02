@@ -18,7 +18,7 @@
                 </h2>
                 <div class="footer-cta-group">
                      
-                    <a href="#" class="btn btn-outline border-primary text-primary font-medium text-base rounded-sm inline-flex items-center gap-lg">
+                    <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-outline border-primary text-primary font-medium text-base rounded-sm inline-flex items-center gap-lg">
                    Contact sales
                     <span class="btn-icon icon-box icon-lg bg-primary text-white rounded-sm">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -76,8 +76,8 @@
             </div>
             <div class="footer-bottom-right">
                 <!-- <a href="<?php echo esc_url( home_url( '/sitemap' ) ); ?>">Sitemap</a> -->
-                <a href="<?php echo esc_url( home_url( '/privacy' ) ); ?>">Privacy</a>
-                <a href="<?php echo esc_url( home_url( '/terms' ) ); ?>">Terms</a>
+                <a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy Policy</a>
+                <a href="<?php echo esc_url( home_url( '/terms-conditions/' ) ); ?>">Terms & Conditions</a>
             </div>
         </div>
     </div>

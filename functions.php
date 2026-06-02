@@ -194,7 +194,7 @@ function trust_habbits_submit_contact_form() {
     $sent = wp_mail( $to, $email_subject, $message, $headers );
 
     // Redirect back with status
-    $redirect_url = get_permalink( get_page_by_path( 'contact' ) ); // Assuming slug is 'contact'
+    $redirect_url = get_permalink( get_page_by_path( 'contact' ) ); 
     if ( ! $redirect_url ) {
         $redirect_url = home_url( '/contact' );
     }

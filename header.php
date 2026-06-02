@@ -39,7 +39,7 @@
 
         <!-- CTA Button & Hamburger -->
         <div class="header-cta flex items-center gap-sm">
-            <a href="<?php echo esc_url( home_url( '/demo' ) ); ?>" class="btn btn-primary bg-primary text-white font-medium text-base rounded-sm inline-flex items-center gap-sm desktop-only">
+            <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-primary bg-primary text-white font-medium text-base rounded-sm inline-flex items-center gap-sm desktop-only">
                 Request a demo 
                 <span class="btn-icon icon-box icon-lg bg-white text-primary rounded-sm">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -68,7 +68,7 @@
             <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
         </ul>
         <div class="mobile-menu-cta mt-lg">
-             <a href="<?php echo esc_url( home_url( '/demo' ) ); ?>" class="btn btn-primary bg-primary text-white font-medium text-base rounded-sm inline-flex items-center gap-sm">
+             <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-primary bg-primary text-white font-medium text-base rounded-sm inline-flex items-center gap-sm">
                 Request a demo 
                 <span class="btn-icon icon-box icon-lg bg-white text-primary rounded-sm">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

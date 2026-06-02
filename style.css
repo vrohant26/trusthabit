@@ -1814,7 +1814,8 @@ ul {
 @media (max-width: 900px) {
 
   .ff-bg,
-  .roots-section-wrapper.bg-primary-container {
+  .roots-section-wrapper.bg-primary-container,
+  .aud-sec.bg-primary-container {
 
     background: var(--color-primary) !important;
 
@@ -1828,12 +1829,22 @@ ul {
   .infrastructure-grid,
   .cta-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 1rem;
+  }
+
+  .infra-title-block {
+    margin-bottom: 3rem;
+  }
+
+  .infra-text-block {
+    margin-top: 3rem;
   }
 
   .infra-cards-row {
     flex-direction: column;
   }
+
+
 
   .aud-sec {
     height: auto;
@@ -2136,4 +2147,8 @@ ul {
   font-size: 1rem;
   border: none;
   cursor: pointer;
+}
+
+.wp-block-separator {
+  margin: 30px 0;
 }
