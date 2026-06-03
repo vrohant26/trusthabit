@@ -2,7 +2,7 @@
 Theme Name: Trust Habbit Custom Theme
 Description: Custom theme for Trust Habbits
 Author: Antigravity
-Version: 2.5
+Version: 3.0.1
 */
 
 @font-face {
@@ -2164,5 +2164,16 @@ ul {
 }
 
 .faq-answer-inner p {
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+}
+
+/* FAQ Accordion CSS Toggle */
+.faq-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.faq-accordion-item.active .faq-answer-wrapper {
+  max-height: 1500px;
 }

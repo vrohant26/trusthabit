@@ -66,7 +66,7 @@ if ( ! is_array( $faq_data ) ) {
                                             <svg class="icon-minus" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                                         </span>
                                     </button>
-                                    <div class="faq-answer-wrapper" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+                                    <div class="faq-answer-wrapper">
                                         <div class="faq-answer-inner" style="padding-bottom: 1.5rem; color: var(--color-text-muted); line-height: 1.7; font-size: 1.05rem;">
                                             <?php echo wpautop( wp_kses_post( $answer ) ); ?>
                                         </div>

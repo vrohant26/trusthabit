@@ -299,13 +299,12 @@ document.addEventListener("DOMContentLoaded", function () {
       
       const isOpen = item.classList.contains('active');
 
-      // Auto-close others in the same group (Optional, as requested in plan defaults)
+      // Auto-close others in the same group
       const group = item.closest('.faq-accordion-list');
       if (group) {
         group.querySelectorAll('.faq-accordion-item').forEach(otherItem => {
           if (otherItem !== item && otherItem.classList.contains('active')) {
             otherItem.classList.remove('active');
-            otherItem.querySelector('.faq-answer-wrapper').style.maxHeight = '0px';
             otherItem.querySelector('.icon-plus').style.display = 'block';
             otherItem.querySelector('.icon-minus').style.display = 'none';
             otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
@@ -316,14 +315,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isOpen) {
         // Close it
         item.classList.remove('active');
-        answerWrapper.style.maxHeight = '0px';
         iconPlus.style.display = 'block';
         iconMinus.style.display = 'none';
         iconContainer.style.transform = 'rotate(0deg)';
       } else {
         // Open it
         item.classList.add('active');
-        answerWrapper.style.maxHeight = answerWrapper.scrollHeight + "px";
         iconPlus.style.display = 'none';
         iconMinus.style.display = 'block';
         iconContainer.style.transform = 'rotate(180deg)';
