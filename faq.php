@@ -11,7 +11,7 @@ if ( ! is_array( $faq_data ) ) {
 }
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="site-main pt-32">
 
     <!-- FAQ Hero Section -->
     <section class="container px-container mt-md">
@@ -56,7 +56,7 @@ if ( ! is_array( $faq_data ) ) {
                             ?>
                                 <div class="faq-accordion-item" style="border-bottom: 1px solid #e1e7ef;">
                                     <button class="faq-question w-full text-left flex justify-between items-center" style="background: none; border: none; padding: 1.25rem 0; cursor: pointer; font-family: inherit; width: 100%; display: flex; justify-content: space-between; align-items: center;">
-                                        <span class="faq-question-text" style="font-size: 1.1rem; font-weight: 600; color: var(--color-text-dark); padding-right: 1rem;">
+                                        <span class="faq-question-text" style="text-align:left; font-size: 1.1rem; font-weight: 600; color: var(--color-text-dark); padding-right: 1rem;">
                                             <?php echo esc_html( $question ); ?>
                                         </span>
                                         <span class="faq-icon" style="color: var(--color-primary); font-size: 1.5rem; transition: transform 0.3s ease; display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px;">
