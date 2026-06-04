@@ -41,7 +41,7 @@ if ( ! is_array( $faq_data ) ) {
                     
                     if ( empty( $questions ) ) continue;
                 ?>
-                    <div class="faq-group mb-xl" style="margin-bottom: 4rem;">
+                    <div class="faq-group" >
                         <?php if ( $group_title ) : ?>
                             <h2 class="faq-group-title text-primary font-heading" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; border-bottom: 2px solid #e1e7ef; padding-bottom: 0.5rem;">
                                 <?php echo esc_html( $group_title ); ?>
