@@ -988,6 +988,10 @@ ul {
   pointer-events: none;
 }
 
+#how-it-works .ff-bg {
+  background: linear-gradient(180deg, #f6fcff 0%, #3f62b2 20%, var(--color-primary) 100%);
+}
+
 /* Centered header */
 .ff-header {
   text-align: center;
@@ -1026,7 +1030,7 @@ ul {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 3;
+  z-index: 0;
   overflow: visible;
 }
 
@@ -1058,10 +1062,10 @@ ul {
 }
 
 /* Row 2 flips the order: text left, image right */
-.ff-row-2 {
+.ff-row-2,
+.ff-row-reverse {
   grid-template-columns: 1fr 55%;
 }
-
 
 .ff-img {
   display: block;
@@ -1116,13 +1120,15 @@ ul {
 @media (max-width: 900px) {
 
   .ff-row,
-  .ff-row-2 {
+  .ff-row-2,
+  .ff-row-reverse {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
   /* On mobile Row 2 restore natural order: image above text */
-  .ff-row-2 .ff-img-col {
+  .ff-row-2 .ff-img-col,
+  .ff-row-reverse .ff-img-col {
     order: -1;
   }
 
@@ -2176,4 +2182,515 @@ ul {
 
 .faq-accordion-item.active .faq-answer-wrapper {
   max-height: 1500px;
+}
+
+/* What Makes Us Different Grid */
+.diff-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .diff-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Why Trust Habit Template Styles */
+#hf-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.sec-ben-grid {
+  display: grid;
+  grid-template-columns: 80px 1.25fr 1.75fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sec-ben-grid:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 900px) {
+  .sec-ben-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 2rem 0;
+  }
+
+  .sec-ben-grid .font-heading.num {
+    margin-bottom: 0.5rem;
+  }
+
+  .sec-ben-grid .title {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Simulations Section Styles */
+.simulations-section {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.simulations-header-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.simulations-header-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 900px;
+  color: #64748b;
+}
+
+.simulations-header-desc p {
+  margin-bottom: 0.5rem;
+}
+
+.sim-flow-wrapper {
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+.sim-flow-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sim-flow-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.sim-step-card-wrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  scroll-snap-align: center;
+}
+
+.sim-step-card {
+  width: clamp(200px, 20vw, 260px);
+  aspect-ratio: 1 / 1;
+}
+
+.sim-step-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sim-step-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.sim-flow-arrow {
+  flex: 0 0 auto;
+  color: #94a3b8;
+  padding-bottom: 2rem;
+}
+
+.sim-points-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem 4rem;
+}
+
+@media (min-width: 900px) {
+  .sim-points-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sim-point-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.sim-point-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.sim-point-icon img {
+  width: 100%;
+  height: 100%;
+  filter: invert(49%) sepia(61%) saturate(2898%) hue-rotate(196deg) brightness(99%) contrast(98%);
+}
+
+.sim-point-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.sim-point-desc {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Decision Makers Section */
+.dm-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+.dm-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.dm-card {
+  position: relative;
+  flex: 0 0 calc((100% - 4.5rem) / 4);
+  min-width: 280px;
+  scroll-snap-align: start;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 3rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  z-index: 1;
+}
+
+.dm-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background-image: linear-gradient(to right, #d9d9d9 1px, transparent 1px), linear-gradient(to bottom, #dbdbdb 1px, transparent 1px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+  mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+  border-radius: 12px 12px 0 0;
+  z-index: 0;
+}
+
+.dm-icon-wrapper {
+  position: relative;
+  z-index: 1;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.dm-icon-wrapper img {
+  max-height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 1200px) {
+  .dm-card {
+    flex: 0 0 calc((100% - 3rem) / 3);
+  }
+}
+
+@media (max-width: 900px) {
+  .dm-card {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .dm-card {
+    flex: 0 0 85%;
+  }
+}
+
+/* Compliance & Audit Benefits Section */
+.compliance-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .compliance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .compliance-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.compliance-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+}
+
+.compliance-card h3 {
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  color: #64748b;
+}
+
+.compliance-card p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.compliance-cta-card {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #3b82f6 100%);
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 250px;
+}
+
+/* Why Organizations Choose Section */
+.choose-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .choose-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.choose-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.choose-card.highlight-card {
+  border: 2px solid var(--color-primary);
+}
+
+.choose-card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 2rem;
+}
+
+.choose-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.choose-card h3 {
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.choose-card p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Blog Archive & Single Styling */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .blog-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.blog-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+}
+
+.blog-card-img {
+  aspect-ratio: 16/9;
+  background: #f1f5f9;
+  overflow: hidden;
+}
+
+.blog-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-card-img img {
+  transform: scale(1.05);
+}
+
+.blog-placeholder-img {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+.blog-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blog-card-content .entry-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.blog-card-content .entry-title a {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  transition: color 0.2s ease;
+}
+
+.blog-card-content .entry-title a:hover {
+  color: var(--color-primary);
+}
+
+.blog-card-content .entry-summary {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.blog-card-footer {
+  margin-top: auto;
+}
+
+.blog-read-more {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: gap 0.2s ease;
+}
+
+.blog-read-more:hover {
+  gap: 0.75rem;
+}
+
+.blog-pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #475569;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.blog-pagination .page-numbers.current,
+.blog-pagination .page-numbers:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.single-blog-content p {
+  margin-bottom: 1.5rem;
+}
+
+.single-blog-content h2,
+.single-blog-content h3,
+.single-blog-content h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-dark);
+}
+
+.single-blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 2rem 0;
 }

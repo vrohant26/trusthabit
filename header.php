@@ -31,10 +31,13 @@
             <ul class="nav-menu flex items-center gap-xs">
                 <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex">Home</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex">About</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/how-it-works' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex">How it works</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/why-trust-habit' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex">Why Trust Habit</a></li>
                 <!-- <li><a href="<?php echo esc_url( home_url( '/features' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-pill inline-flex">Features</a></li> -->
                 <!-- <li><a href="<?php echo esc_url( home_url( '/pricing' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-pill inline-flex">Pricing</a></li> -->
 
                 <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex">Contact</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex">Blog</a></li>
             </ul>
         </nav>
 
@@ -66,8 +69,10 @@
         <ul class="mobile-nav-menu">
             <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
             <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
-
+            <li><a href="<?php echo esc_url( home_url( '/how-it-works' ) ); ?>">How it works</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/why-trust-habit' ) ); ?>">Why Trust Habit</a></li>
             <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></li>
         </ul>
         <div class="mobile-menu-cta mt-lg">
              <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-primary bg-primary text-white font-medium text-base rounded-sm inline-flex items-center gap-sm">

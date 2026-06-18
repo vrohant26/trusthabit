@@ -22,7 +22,7 @@ get_header();
                   Measure, reduce & manage human  <span class="text-primary">cyber risk.</span>
                 </h1>
                 <p class="hero-subtitle text-lg text-muted leading-relaxed mb-lg">
-                    Trust Habit￼helps organizations reduce phishing risk through vulnerability detection, phishing simulations, and employee training
+                    Trust Habit helps organizations reduce phishing risk through vulnerability detection, phishing simulations, and employee training
 
                 </p>
                 <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-outline border-primary text-primary font-medium text-lg rounded-sm inline-flex items-center justify-center px-lg py-md" style="padding: 0.75rem 1.5rem;">

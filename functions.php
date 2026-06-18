@@ -242,6 +242,56 @@ function trust_habbits_add_faq_meta_box() {
 }
 add_action( 'add_meta_boxes', 'trust_habbits_add_faq_meta_box' );
 
+function trust_habbits_faq_meta_box_visibility() {
+    $screen = get_current_screen();
+    if ( ! $screen || $screen->id !== 'page' ) return;
+    ?>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const metabox = document.getElementById('trust_habbits_faq_meta_box');
+        if (!metabox) return;
+
+        metabox.style.display = 'none'; // Hide by default
+
+        // Check if Gutenberg is active
+        if ( typeof wp !== 'undefined' && wp.data && wp.data.select('core/editor') ) {
+            const updateVisibility = () => {
+                const template = wp.data.select('core/editor').getEditedPostAttribute('template');
+                if (template === 'faq.php') {
+                    metabox.style.display = 'block';
+                } else {
+                    metabox.style.display = 'none';
+                }
+            };
+            
+            // Wait a moment for Gutenberg to initialize fully
+            setTimeout(updateVisibility, 500);
+
+            // Subscribe to any changes
+            wp.data.subscribe(function() {
+                setTimeout(updateVisibility, 50);
+            });
+        } else {
+            // Classic Editor Fallback
+            const templateSelect = document.getElementById('page_template');
+            if (templateSelect) {
+                const updateVisibility = () => {
+                    if (templateSelect.value === 'faq.php') {
+                        metabox.style.display = 'block';
+                    } else {
+                        metabox.style.display = 'none';
+                    }
+                };
+                updateVisibility();
+                templateSelect.addEventListener('change', updateVisibility);
+            }
+        }
+    });
+    </script>
+    <?php
+}
+add_action('admin_footer', 'trust_habbits_faq_meta_box_visibility');
+
 function trust_habbits_faq_meta_box_html( $post ) {
     wp_nonce_field( 'trust_habbits_faq_nonce', 'trust_habbits_faq_nonce' );
     $faq_data = get_post_meta( $post->ID, '_faq_data', true );
@@ -406,3 +456,53 @@ function trust_habbits_save_faq_meta_box( $post_id ) {
     }
 }
 add_action( 'save_post', 'trust_habbits_save_faq_meta_box' );
+
+// ==========================================
+// Register 'Blog' Custom Post Type
+// ==========================================
+function trust_habbits_register_blog_cpt() {
+    $labels = array(
+        'name'               => _x( 'Blogs', 'post type general name', 'trust-habbits' ),
+        'singular_name'      => _x( 'Blog', 'post type singular name', 'trust-habbits' ),
+        'menu_name'          => _x( 'Blogs', 'admin menu', 'trust-habbits' ),
+        'name_admin_bar'     => _x( 'Blog', 'add new on admin bar', 'trust-habbits' ),
+        'add_new'            => _x( 'Add New', 'blog', 'trust-habbits' ),
+        'add_new_item'       => __( 'Add New Blog', 'trust-habbits' ),
+        'new_item'           => __( 'New Blog', 'trust-habbits' ),
+        'edit_item'          => __( 'Edit Blog', 'trust-habbits' ),
+        'view_item'          => __( 'View Blog', 'trust-habbits' ),
+        'all_items'          => __( 'All Blogs', 'trust-habbits' ),
+        'search_items'       => __( 'Search Blogs', 'trust-habbits' ),
+        'not_found'          => __( 'No blogs found.', 'trust-habbits' ),
+        'not_found_in_trash' => __( 'No blogs found in Trash.', 'trust-habbits' )
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'blog' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'menu_icon'          => 'dashicons-admin-post',
+        'show_in_rest'       => true, // Enables Gutenberg Editor
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+    );
+
+    register_post_type( 'blog', $args );
+}
+add_action( 'init', 'trust_habbits_register_blog_cpt' );
+
+// Filter posts per page for blog archive
+function trust_habbits_blog_posts_per_page( $query ) {
+    if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'blog' ) ) {
+        $query->set( 'posts_per_page', 20 );
+    }
+}
+add_action( 'pre_get_posts', 'trust_habbits_blog_posts_per_page' );
+

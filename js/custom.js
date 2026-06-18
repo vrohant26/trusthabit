@@ -115,12 +115,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const card1 = document.getElementById("ff-card-1");
   const card2 = document.getElementById("ff-card-2");
   const card3 = document.getElementById("ff-card-3");
+  const card4 = document.getElementById("ff-card-4");
+  const card5 = document.getElementById("ff-card-5");
   const path1bg = document.getElementById("ff-path-1-bg");
   const path1 = document.getElementById("ff-path-1");
   const path2bg = document.getElementById("ff-path-2-bg");
   const path2 = document.getElementById("ff-path-2");
+  const path3bg = document.getElementById("ff-path-3-bg");
+  const path3 = document.getElementById("ff-path-3");
+  const path4bg = document.getElementById("ff-path-4-bg");
+  const path4 = document.getElementById("ff-path-4");
 
-  if (ffRows && card1 && card2 && card3 && path1 && path2) {
+  if (ffRows && card1 && card2 && path1) {
     // Measure element position relative to ancestor — immune to CSS transforms & scroll
     function offsetRelTo(el, ancestor) {
       let top = 0,
@@ -172,33 +178,63 @@ document.addEventListener("DOMContentLoaded", () => {
     function initPaths() {
       if (window.innerWidth <= 900) return;
 
-      const p1 = buildPath(card1, 0.72, card2, 0.72);
-      path1bg.setAttribute("d", p1.d);
-      path1.setAttribute("d", p1.d);
-      path1.style.stroke = "url(#ff-grad-1)";
-      if (grad1) setGradient(grad1, p1.x1, p1.y1, p1.x2, p1.y2);
-      gsap.set(path1, {
-        strokeDasharray: path1.getTotalLength(),
-        strokeDashoffset: path1.getTotalLength(),
-      });
+      if (path1 && card2) {
+        const p1 = buildPath(card1, 0.5, card2, 0.5);
+        if (path1bg) path1bg.setAttribute("d", p1.d);
+        path1.setAttribute("d", p1.d);
+        path1.style.stroke = "url(#ff-grad-1)";
+        if (grad1) setGradient(grad1, p1.x1, p1.y1, p1.x2, p1.y2);
+        gsap.set(path1, {
+          strokeDasharray: path1.getTotalLength(),
+          strokeDashoffset: path1.getTotalLength(),
+        });
+      }
 
-      const p2 = buildPath(card2, 0.28, card3, 0.28);
-      path2bg.setAttribute("d", p2.d);
-      path2.setAttribute("d", p2.d);
-      path2.style.stroke = "url(#ff-grad-2)";
-      if (grad2) setGradient(grad2, p2.x1, p2.y1, p2.x2, p2.y2);
-      gsap.set(path2, {
-        strokeDasharray: path2.getTotalLength(),
-        strokeDashoffset: path2.getTotalLength(),
-      });
+      if (path2 && card3) {
+        const p2 = buildPath(card2, 0.5, card3, 0.5);
+        if (path2bg) path2bg.setAttribute("d", p2.d);
+        path2.setAttribute("d", p2.d);
+        path2.style.stroke = "url(#ff-grad-2)";
+        if (grad2) setGradient(grad2, p2.x1, p2.y1, p2.x2, p2.y2);
+        gsap.set(path2, {
+          strokeDasharray: path2.getTotalLength(),
+          strokeDashoffset: path2.getTotalLength(),
+        });
+      }
+
+      if (path3 && card4) {
+        const p3 = buildPath(card3, 0.5, card4, 0.5);
+        if (path3bg) path3bg.setAttribute("d", p3.d);
+        path3.setAttribute("d", p3.d);
+        path3.style.stroke = "url(#ff-grad-1)";
+        gsap.set(path3, {
+          strokeDasharray: path3.getTotalLength(),
+          strokeDashoffset: path3.getTotalLength(),
+        });
+      }
+
+      if (path4 && card5) {
+        const p4 = buildPath(card4, 0.5, card5, 0.5);
+        if (path4bg) path4bg.setAttribute("d", p4.d);
+        path4.setAttribute("d", p4.d);
+        path4.style.stroke = "url(#ff-grad-2)";
+        gsap.set(path4, {
+          strokeDasharray: path4.getTotalLength(),
+          strokeDashoffset: path4.getTotalLength(),
+        });
+      }
     }
 
     function setupDrawTriggers() {
       if (window.innerWidth <= 900) return;
-      [
-        { path: path1, trigger: ".ff-row-1" },
-        { path: path2, trigger: ".ff-row-2" },
-      ].forEach(({ path, trigger }) => {
+
+      const triggers = [];
+      if (path1) triggers.push({ path: path1, trigger: ".ff-row-1" });
+      if (path2) triggers.push({ path: path2, trigger: ".ff-row-2" });
+      if (path3) triggers.push({ path: path3, trigger: ".ff-row-3" });
+      if (path4) triggers.push({ path: path4, trigger: ".ff-row-4" });
+
+      triggers.forEach(({ path, trigger }) => {
         gsap.to(path, {
           strokeDashoffset: 0,
           ease: "none",
@@ -287,45 +323,88 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // FAQ Accordion Logic
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  
-  faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-      const item = question.closest('.faq-accordion-item');
-      const answerWrapper = item.querySelector('.faq-answer-wrapper');
-      const iconPlus = question.querySelector('.icon-plus');
-      const iconMinus = question.querySelector('.icon-minus');
-      const iconContainer = question.querySelector('.faq-icon');
-      
-      const isOpen = item.classList.contains('active');
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", () => {
+      const item = question.closest(".faq-accordion-item");
+      const answerWrapper = item.querySelector(".faq-answer-wrapper");
+      const iconPlus = question.querySelector(".icon-plus");
+      const iconMinus = question.querySelector(".icon-minus");
+      const iconContainer = question.querySelector(".faq-icon");
+
+      const isOpen = item.classList.contains("active");
 
       // Auto-close others in the same group
-      const group = item.closest('.faq-accordion-list');
+      const group = item.closest(".faq-accordion-list");
       if (group) {
-        group.querySelectorAll('.faq-accordion-item').forEach(otherItem => {
-          if (otherItem !== item && otherItem.classList.contains('active')) {
-            otherItem.classList.remove('active');
-            otherItem.querySelector('.icon-plus').style.display = 'block';
-            otherItem.querySelector('.icon-minus').style.display = 'none';
-            otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+        group.querySelectorAll(".faq-accordion-item").forEach((otherItem) => {
+          if (otherItem !== item && otherItem.classList.contains("active")) {
+            otherItem.classList.remove("active");
+            otherItem.querySelector(".icon-plus").style.display = "block";
+            otherItem.querySelector(".icon-minus").style.display = "none";
+            otherItem.querySelector(".faq-icon").style.transform =
+              "rotate(0deg)";
           }
         });
       }
 
       if (isOpen) {
         // Close it
-        item.classList.remove('active');
-        iconPlus.style.display = 'block';
-        iconMinus.style.display = 'none';
-        iconContainer.style.transform = 'rotate(0deg)';
+        item.classList.remove("active");
+        iconPlus.style.display = "block";
+        iconMinus.style.display = "none";
+        iconContainer.style.transform = "rotate(0deg)";
       } else {
         // Open it
-        item.classList.add('active');
-        iconPlus.style.display = 'none';
-        iconMinus.style.display = 'block';
-        iconContainer.style.transform = 'rotate(180deg)';
+        item.classList.add("active");
+        iconPlus.style.display = "none";
+        iconMinus.style.display = "block";
+        iconContainer.style.transform = "rotate(180deg)";
       }
     });
   });
 
+  // Why Trust Habit - Carousel
+  const carousel = document.getElementById("hf-carousel");
+  const prevBtn = document.getElementById("hf-prev-btn");
+  const nextBtn = document.getElementById("hf-next-btn");
+
+  if (carousel && prevBtn && nextBtn) {
+    // Calculate scroll amount based on first card's width + gap
+    const getScrollAmount = () => {
+      const card = carousel.children[0];
+      const gap = 24; // 1.5rem gap
+      return card ? card.offsetWidth + gap : 300;
+    };
+
+    prevBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+    });
+  }
+
+  // Decision Makers - Carousel
+  const dmCarousel = document.getElementById("dm-carousel");
+  const dmPrevBtn = document.getElementById("dm-prev-btn");
+  const dmNextBtn = document.getElementById("dm-next-btn");
+
+  if (dmCarousel && dmPrevBtn && dmNextBtn) {
+    const getDmScrollAmount = () => {
+      const card = dmCarousel.children[0];
+      const gap = 24; // 1.5rem gap
+      return card ? card.offsetWidth + gap : 300;
+    };
+
+    dmPrevBtn.addEventListener("click", () => {
+      dmCarousel.scrollBy({ left: -getDmScrollAmount(), behavior: "smooth" });
+    });
+
+    dmNextBtn.addEventListener("click", () => {
+      dmCarousel.scrollBy({ left: getDmScrollAmount(), behavior: "smooth" });
+    });
+  }
 });
