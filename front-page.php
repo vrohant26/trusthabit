@@ -503,6 +503,92 @@ get_header();
         <div class="audience-fade-bottom"></div>
     </section>
 
+      <section class="container px-container" style="padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); background: #ffffff;">
+        
+            
+            <!-- Header -->
+            <div style="margin-bottom: 4rem;">
+                <h2 class="font-heading" style="font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 500; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em;">
+                    <span class="text-dark">Why Organizations Choose</span><br><span class="text-primary">Trust Habit</span>
+                </h2>
+                <p class="font-body" style="font-size: 1.15rem; line-height: 1.6; color: #475569; max-width: 900px; margin: 0; font-weight: 500;">
+                    Trust Habit Is Designed To Remove Every Barrier Between An Organization And A Stronger Human Security Posture — From Deployment Complexity To Cost Concerns.
+                </p>
+            </div>
+
+            <!-- Grid -->
+            <div class="choose-grid">
+                
+                <!-- Card 1 -->
+                <div class="choose-card">
+                    <div class="choose-card-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/Easy deployement.svg" alt="Easy Deployment">
+                    </div>
+                    <h3 class="font-heading">Easy Deployment</h3>
+                    <p class="font-body">
+                        Up and running in hours, not weeks. No complex infrastructure required.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="choose-card">
+                    <div class="choose-card-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/cloud bases saas.svg" alt="Cloud-Based SaaS">
+                    </div>
+                    <h3 class="font-heading">Cloud-Based SaaS</h3>
+                    <p class="font-body">
+                        Fully cloud-based platform with no onpremise installation or maintenance overhead.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="choose-card">
+                    <div class="choose-card-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/Realistic Simulation.svg" alt="Realistic Simulations">
+                    </div>
+                    <h3 class="font-heading">Realistic Simulations</h3>
+                    <p class="font-body">
+                        Phishing templates that mirror real-world attacks - not generic, easily spotted test emails.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="choose-card">
+                    <div class="choose-card-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/actionable reporting.svg" alt="Actionable Reporting">
+                    </div>
+                    <h3 class="font-heading">Actionable Reporting</h3>
+                    <p class="font-body">
+                        Reports designed for action - not just data dumps, but insights that drive decisions.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="choose-card">
+                    <div class="choose-card-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/scales with you.svg" alt="Scales With You">
+                    </div>
+                    <h3 class="font-heading">Scales With You</h3>
+                    <p class="font-body">
+                        Scalable from small businesses to large enterprises - Trust Habit grows with your organization.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="choose-card ">
+                    <div class="choose-card-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/cost effective.svg" alt="Cost-Effective">
+                    </div>
+                    <h3 class="font-heading">Cost-Effective</h3>
+                    <p class="font-body">
+                        A fraction of the cost of a single breach recovery - prevention has never been more affordable.
+                    </p>
+                </div>
+
+            </div>
+
+    </section>
+
     <!-- Seventh Section: Infrastructure -->
     <section class="infrastructure-section">
         <div class="container px-container">

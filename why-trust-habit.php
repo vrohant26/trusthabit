@@ -96,7 +96,7 @@ get_header();
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/bullet point.svg" alt="bullet" style="width:100%; height:100%;">
                         </div>
                         <div class="font-body" style="font-size: 0.95rem; color: #1e293b; line-height: 1.6; font-weight: 500;">
-                            Organizations Need Proof That Employees Can Recognize Attacks
+                            Organizations Need Proof That Employees Can <br> Recognize Attacks
                         </div>
                     </div>
                     
@@ -515,9 +515,9 @@ get_header();
     </section>
 
     <!-- Why Simulations Work Better Section -->
-    <section class="simulations-section container px-container">
+    <section class="simulations-section ">
         
-     
+        <div class="container px-container">
             <!-- Header -->
             <div style="margin-bottom: 4rem;">
                 <h2 class="font-heading text-dark simulations-header-title">
@@ -638,7 +638,7 @@ get_header();
                 </div>
 
             </div>
-       
+        </div>
     </section>
 
     <!-- Decision Makers Section -->

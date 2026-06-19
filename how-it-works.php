@@ -268,7 +268,7 @@ get_header();
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/bullet point.svg" alt="bullet" style="width:100%; height:100%;">
                         </div>
                         <div class="font-body" style="font-size: 0.95rem; color: #1e293b; line-height: 1.5; font-weight: 500;">
-                            Google Gmail API Integration & Microsoft Graph API Integration
+                            Google Gmail API Integration & Microsoft Graph <br> API  Integration
                         </div>
                     </div>
                     <div class="diff-bullet" style="display: flex; gap: 1rem; border-bottom: 1px solid #e1e7ef; padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
