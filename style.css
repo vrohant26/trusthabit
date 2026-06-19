@@ -2,7 +2,7 @@
 Theme Name: Trust Habbit Custom Theme
 Description: Custom theme for Trust Habbits
 Author: Antigravity
-Version: 3.0.4
+Version: 3.0.5
 */
 
 @font-face {
@@ -2268,9 +2268,11 @@ ul {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   align-items: center;
+  justify-content: space-between;
   padding-bottom: 1.5rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  width: 100%;
 }
 
 .sim-flow-carousel::-webkit-scrollbar {
@@ -2278,34 +2280,39 @@ ul {
 }
 
 .sim-step-card-wrapper {
-  flex: 1 0 auto;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
   scroll-snap-align: center;
 }
 
 .sim-step-card {
-  width: clamp(200px, 20vw, 260px);
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .sim-step-card img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
+  display: block;
 }
 
 .sim-step-title {
   font-size: 0.95rem;
   font-weight: 500;
+  margin-top: 1rem;
 }
 
 .sim-flow-arrow {
   flex: 0 0 auto;
   color: #94a3b8;
-  padding-bottom: 2rem;
+  padding-bottom: 2.2rem; /* Aligns with the center of the cards above the title */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sim-points-grid {

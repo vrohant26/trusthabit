@@ -543,7 +543,7 @@ get_header();
 
                     <!-- Arrow -->
                     <div class="sim-flow-arrow">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/arrow.svg" alt="Arrow" style="width: 32px; height: 32px; object-fit: contain;">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/arrow.svg" alt="Arrow" style="height: 32px; object-fit: contain;">
                     </div>
 
                     <!-- Step 2 -->
@@ -556,7 +556,7 @@ get_header();
 
                     <!-- Arrow -->
                     <div class="sim-flow-arrow">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/arrow.svg" alt="Arrow" style="width: 32px; height: 32px; object-fit: contain;">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/arrow.svg" alt="Arrow" style="height: 32px; object-fit: contain;">
                     </div>
 
                     <!-- Step 3 -->
@@ -569,7 +569,7 @@ get_header();
 
                     <!-- Arrow -->
                     <div class="sim-flow-arrow">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/arrow.svg" alt="Arrow" style="width: 32px; height: 32px; object-fit: contain;">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/arrow.svg" alt="Arrow" style="height: 32px; object-fit: contain;">
                     </div>
 
                     <!-- Step 4 -->
