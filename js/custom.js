@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof SplitText !== "undefined") plugins.push(SplitText);
   gsap.registerPlugin(...plugins);
 
-  // Hero entrance animation removed as per request
 
   // Exclamation glow — bento cards
   document.querySelectorAll(".exclamation-glow").forEach((el) => {
@@ -108,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ── Features Flow (Section 5) ──────────────────────────────────────────
-  // Row fade-in animation removed as per request
 
   // SVG connecting lines
   const ffRows = document.getElementById("ff-rows");
@@ -229,19 +227,20 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.innerWidth <= 900) return;
 
       const triggers = [];
-      if (path1) triggers.push({ path: path1, trigger: ".ff-row-1" });
-      if (path2) triggers.push({ path: path2, trigger: ".ff-row-2" });
-      if (path3) triggers.push({ path: path3, trigger: ".ff-row-3" });
-      if (path4) triggers.push({ path: path4, trigger: ".ff-row-4" });
+      if (path1) triggers.push({ path: path1, trigger: ".ff-row-1", endTrigger: ".ff-row-2" });
+      if (path2) triggers.push({ path: path2, trigger: ".ff-row-2", endTrigger: ".ff-row-3" });
+      if (path3) triggers.push({ path: path3, trigger: ".ff-row-3", endTrigger: ".ff-row-4" });
+      if (path4) triggers.push({ path: path4, trigger: ".ff-row-4", endTrigger: ".ff-row-5" });
 
-      triggers.forEach(({ path, trigger }) => {
+      triggers.forEach(({ path, trigger, endTrigger }) => {
         gsap.to(path, {
           strokeDashoffset: 0,
           ease: "none",
           scrollTrigger: {
             trigger,
-            start: "bottom 65%",
-            end: "bottom 5%",
+            start: "center center",
+            endTrigger: endTrigger,
+            end: "center center",
             scrub: 0.8,
             invalidateOnRefresh: true,
             onRefresh: initPaths,

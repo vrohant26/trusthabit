@@ -41,6 +41,16 @@ function trust_habbits_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'trust_habbits_scripts' );
 
+// Add defer attribute to scripts
+function trust_habbits_defer_scripts( $tag, $handle, $src ) {
+    $defer_scripts = array( 'gsap', 'gsap-scrolltrigger', 'gsap-splittext', 'lenis', 'swiper-js', 'trust-habbits-customjs' );
+    if ( in_array( $handle, $defer_scripts ) ) {
+        return '<script src="' . $src . '" defer="defer"></script>' . "\n";
+    }
+    return $tag;
+}
+add_filter( 'script_loader_tag', 'trust_habbits_defer_scripts', 10, 3 );
+
 // ==========================================
 // Register 'Team' Custom Post Type
 // ==========================================

@@ -33,9 +33,6 @@
                 <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex <?php echo is_page('about') ? 'active' : ''; ?>">About</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/how-it-works' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex <?php echo is_page('how-it-works') ? 'active' : ''; ?>">How it works</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/why-trust-habit' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex <?php echo is_page('why-trust-habit') ? 'active' : ''; ?>">Why Trust Habit</a></li>
-                <!-- <li><a href="<?php echo esc_url( home_url( '/features' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-pill inline-flex">Features</a></li> -->
-                <!-- <li><a href="<?php echo esc_url( home_url( '/pricing' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-pill inline-flex">Pricing</a></li> -->
-
                 <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex <?php echo is_page('contact') ? 'active' : ''; ?>">Contact</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="nav-item-link text-base font-medium text-dark rounded-sm inline-flex <?php echo is_post_type_archive('blog') || is_singular('blog') ? 'active' : ''; ?>">Blog</a></li>
             </ul>

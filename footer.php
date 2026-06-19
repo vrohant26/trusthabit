@@ -37,11 +37,9 @@
                     <h4 class="footer-nav-title uppercase tracking-wide text-xs">Navigation</h4>
                     <ul class="footer-nav-list">
                         <li class="<?php echo is_front_page() ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a> <?php if(is_front_page()) echo '<span class="nav-dot"></span>'; ?></li>
-                        <!-- <li><a href="<?php echo esc_url( home_url( '/features' ) ); ?>">Features</a></li> -->
                         <li class="<?php echo is_page('about') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a> <?php if(is_page('about')) echo '<span class="nav-dot"></span>'; ?></li>
                         <li class="<?php echo is_page('how-it-works') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/how-it-works' ) ); ?>">How it works</a> <?php if(is_page('how-it-works')) echo '<span class="nav-dot"></span>'; ?></li>
                         <li class="<?php echo is_page('why-trust-habit') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/why-trust-habit' ) ); ?>">Why Trust Habit</a> <?php if(is_page('why-trust-habit')) echo '<span class="nav-dot"></span>'; ?></li>
-                        <!-- <li><a href="<?php echo esc_url( home_url( '/pricing' ) ); ?>">Pricing</a></li> -->
                         <li class="<?php echo is_page('faq') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/faq' ) ); ?>">FAQ</a> <?php if(is_page('faq')) echo '<span class="nav-dot"></span>'; ?></li>
                         <li class="<?php echo is_page('contact') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact Us</a> <?php if(is_page('contact')) echo '<span class="nav-dot"></span>'; ?></li>
                         <li class="<?php echo is_post_type_archive('blog') || is_singular('blog') ? 'active-nav' : ''; ?>"><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a> <?php if(is_post_type_archive('blog') || is_singular('blog')) echo '<span class="nav-dot"></span>'; ?></li>
