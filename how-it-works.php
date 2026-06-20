@@ -7,14 +7,7 @@ get_header();
 
 <main id="primary" class="site-main flex flex-column gap-xl pt-32">
 
-    <!-- Hero Section -->
-    <section class="container px-container mt-md">
-        <div class="contact-hero text-center flex flex-column justify-center items-center">
-            <h1 class="font-heading text-white" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500;">
-                How trust habit works
-            </h1>
-        </div>
-    </section>
+
 
     <!-- Features Flow Section -->
     <section id="how-it-works" class="ff-section">

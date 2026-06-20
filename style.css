@@ -995,7 +995,7 @@ ul {
 
 /* Centered header */
 .ff-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: clamp(4rem, 7vw, 6rem);
 }
 
@@ -1009,10 +1009,10 @@ ul {
 }
 
 .ff-subtitle {
-  font-size: clamp(0.85rem, 1vw, 1rem);
+
   line-height: 1.6;
   max-width: 600px;
-  margin: 0 auto;
+
 }
 
 /* Rows container — the SVG is inside here, position:relative */
@@ -2309,7 +2309,8 @@ ul {
 .sim-flow-arrow {
   flex: 0 0 auto;
   color: #94a3b8;
-  padding-bottom: 2.2rem; /* Aligns with the center of the cards above the title */
+  padding-bottom: 2.2rem;
+  /* Aligns with the center of the cards above the title */
   display: flex;
   align-items: center;
   justify-content: center;

@@ -8,13 +8,7 @@ get_header();
 <main id="primary" class="site-main pt-32">
 
     <!-- Hero Section -->
-    <section class="container px-container mt-md">
-        <div class="contact-hero text-center flex flex-column justify-center items-center">
-            <h1 class="font-heading text-white" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500;">
-                Why trust habit ?
-            </h1>
-        </div>
-    </section>
+
 
     <!-- Why Every Organization Needs Section -->
     <section class="container px-container" style="padding-bottom: clamp(4rem, 8vw, 8rem); position: relative; margin-top: clamp(4rem, 8vw, 6rem);">
