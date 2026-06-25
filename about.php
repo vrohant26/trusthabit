@@ -54,7 +54,7 @@ get_header();
     </div>
 
     <!-- Team Section -->
-    <section class="container team-section px-container" style="padding-top: clamp(4rem, 8vw, 6rem); padding-bottom: clamp(6rem, 10vw, 8rem); overflow: hidden;">
+    <section class="container team-section px-container" style="padding-top: clamp(2.8rem, 5.6vw, 4.2rem); padding-bottom: clamp(4.2rem, 7vw, 5.6rem); overflow: hidden;">
         <div class="team-header-area flex justify-between items-end mb-lg" style="gap: 2rem;">
             <div class="team-header-content" style="max-width: 700px;">
                 <div class="hero-eyebrow text-xs font-semibold mb-sm uppercase tracking-wide flex items-center gap-xs" style="color: #64748b; background: #e2e8f0; padding: 0.5rem 1rem; border-radius: 4px; display: inline-flex;">
@@ -185,7 +185,7 @@ get_header();
   
 
     <!-- Principles Section -->
-    <section class="container principles-section px-container" style="padding-top: clamp(6rem, 10vw, 8rem); padding-bottom: clamp(4rem, 10vw, 8rem);">
+    <section class="container principles-section px-container" style="padding-top: clamp(4.2rem, 7vw, 5.6rem); padding-bottom: clamp(2.8rem, 7vw, 5.6rem);">
         
         <!-- Header Row -->
         <div class="principles-row" style="margin-bottom: clamp(3rem, 6vw, 5rem);">
@@ -210,47 +210,47 @@ get_header();
             <!-- Item 1 -->
             <div class="principles-row principle-item items-center" style="padding: 2rem 0; border-top: 1px solid #e1e7ef;">
                 <div class="principles-left">
-                    <span class="text-primary font-semibold" style="font-size: 1rem;">01.</span>
+                    <span class="text-primary font-semibold" style="font-size: clamp(1rem, 3vw, 1.5rem);">01.</span>
                 </div>
                 <div class="principles-right">
-                    <h4 class="text-dark font-medium m-0" style="font-size: 1.4rem;">People are partners, not liabilities</h4>
+                    <h4 class="text-dark font-medium m-0" style="font-size: clamp(1.2rem, 4vw, 1.8rem);">People are partners, not liabilities</h4>
                 </div>
             </div>
             
             <!-- Item 2 -->
             <div class="principles-row principle-item items-center" style="padding: 2rem 0; border-top: 1px solid #e1e7ef;">
                 <div class="principles-left">
-                    <span class="text-primary font-semibold" style="font-size: 1rem;">03.</span>
+                    <span class="text-primary font-semibold" style="font-size: clamp(1rem, 3vw, 1.5rem);">03.</span>
                 </div>
                 <div class="principles-right">
-                    <h4 class="text-dark font-medium m-0" style="font-size: 1.4rem;">Transparency builds trust</h4>
+                    <h4 class="text-dark font-medium m-0" style="font-size: clamp(1.2rem, 4vw, 1.8rem);">Transparency builds trust</h4>
                 </div>
             </div>
             
             <!-- Item 3 -->
             <div class="principles-row principle-item items-center" style="padding: 2rem 0; border-top: 1px solid #e1e7ef;">
                 <div class="principles-left">
-                    <span class="text-primary font-semibold" style="font-size: 1rem;">04.</span>
+                    <span class="text-primary font-semibold" style="font-size: clamp(1rem, 3vw, 1.5rem);">04.</span>
                 </div>
                 <div class="principles-right">
-                    <h4 class="text-dark font-medium m-0" style="font-size: 1.4rem;">Ethics are non-negotiable</h4>
+                    <h4 class="text-dark font-medium m-0" style="font-size: clamp(1.2rem, 4vw, 1.8rem);">Ethics are non-negotiable</h4>
                 </div>
             </div>
             
             <!-- Item 4 -->
             <div class="principles-row principle-item items-center" style="padding: 2rem 0; border-top: 1px solid #e1e7ef; border-bottom: 1px solid #e1e7ef;">
                 <div class="principles-left">
-                    <span class="text-primary font-semibold" style="font-size: 1rem;">05.</span>
+                    <span class="text-primary font-semibold" style="font-size: clamp(1rem, 3vw, 1.5rem);">05.</span>
                 </div>
                 <div class="principles-right">
-                    <h4 class="text-dark font-medium m-0" style="font-size: 1.4rem;">Security must work in the real world</h4>
+                    <h4 class="text-dark font-medium m-0" style="font-size: clamp(1.2rem, 4vw, 1.8rem);">Security must work in the real world</h4>
                 </div>
             </div>
         </div>
     </section>
 
   <!-- Vision Section -->
-    <section class="mission-section" style="padding-top: clamp(2rem, 4vw, 4rem); padding-bottom: clamp(4rem, 8vw, 6rem);">
+    <section class="mission-section" style="padding-top: clamp(2rem, 4vw, 4rem); padding-bottom: clamp(2.8rem, 5.6vw, 4.2rem);">
         <div class="container px-container">
             <div class="mission-badge">
                 <span class="mission-badge-dot"></span>

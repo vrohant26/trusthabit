@@ -11,10 +11,10 @@ get_header();
 
 
     <!-- Why Every Organization Needs Section -->
-    <section class="container px-container" style="padding-bottom: clamp(4rem, 8vw, 8rem); position: relative; margin-top: clamp(4rem, 8vw, 6rem);">
+    <section class="container px-container" style="padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); position: relative; margin-top: clamp(2.8rem, 5.6vw, 4.2rem);">
         <!-- Decorative Grid Background -->
-        <div style="position: absolute; top: 10%; right: -5%; width: 400px; height: 400px; background-image: url('data:image/svg+xml,%3Csvg width=\'24\' height=\'24\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'5\' height=\'5\' fill=\'%23e2e8f0\'/%3E%3C/svg%3E'); z-index: -1; opacity: 0.8; -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%); mask-image: radial-gradient(circle, black 30%, transparent 70%);"></div>
-        <div style="position: absolute; bottom: -10%; left: -5%; width: 400px; height: 400px; background-image: url('data:image/svg+xml,%3Csvg width=\'24\' height=\'24\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'5\' height=\'5\' fill=\'%23e2e8f0\'/%3E%3C/svg%3E'); z-index: -1; opacity: 0.8; -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%); mask-image: radial-gradient(circle, black 30%, transparent 70%);"></div>
+        <div style="position: absolute; top: 10%; right: -5%; width: 400px; height: 400px; background-image: url('data:image/svg+xml,%3Csvg width=\'16\' height=\'16\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'12\' height=\'12\' fill=\'%23e2e8f0\'/%3E%3C/svg%3E'); z-index: -1; opacity: 0.8; -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%); mask-image: radial-gradient(circle, black 30%, transparent 70%);"></div>
+        <div style="position: absolute; bottom: -10%; left: -5%; width: 400px; height: 400px; background-image: url('data:image/svg+xml,%3Csvg width=\'16\' height=\'16\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'12\' height=\'12\' fill=\'%23e2e8f0\'/%3E%3C/svg%3E'); z-index: -1; opacity: 0.8; -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%); mask-image: radial-gradient(circle, black 30%, transparent 70%);"></div>
 
         <div class="diff-header" style="max-width: 900px; margin-bottom: 3rem;">
             <div class="problem-badge" style="background:#eef2f6; color:#64748b; display:inline-flex; align-items:center; gap:0.5rem; padding:0.4rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:600; letter-spacing:0.05em; margin-bottom:1.5rem;">
@@ -68,7 +68,7 @@ get_header();
             </div>
 
             <!-- The Gap Card -->
-            <div style="border: 2px solid #8ba3c7; border-radius: 12px; background: #dbe5f0; padding: 2.5rem; display: flex; flex-direction: column; gap: 2rem; position: relative; z-index: 2;">
+            <div style="border: 2px solid #1e293b; border-radius: 12px; background: #fff; padding: 2.5rem; display: flex; flex-direction: column; gap: 2rem; position: relative; z-index: 2;">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #b8c8dd; padding-bottom: 1rem;">
                     <h3 class="font-heading" style="font-size: 1.35rem; font-weight: 600; color: #0f172a;">The Gap</h3>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/the gap.svg" alt="The Gap" style="width: 32px; height: 32px; object-fit: contain;">
@@ -78,7 +78,7 @@ get_header();
                     <div style="display: flex; gap: 1.25rem;">
                         <div style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;">
                             <!-- Original blue bullet -->
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/bullet point.svg" alt="bullet" style="width:100%; height:100%;">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/bullet point.svg" alt="bullet" style="width:100%; height:100%; filter: brightness(0) saturate(100%) invert(31%) sepia(87%) saturate(2680%) hue-rotate(338deg) brightness(94%) contrast(96%);">
                         </div>
                         <div class="font-body" style="font-size: 0.95rem; color: #1e293b; line-height: 1.6; font-weight: 500;">
                             Traditional Awareness Training Does Not Measure Actual Employee Behaviour
@@ -87,7 +87,7 @@ get_header();
                     
                     <div style="display: flex; gap: 1.25rem;">
                         <div style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/bullet point.svg" alt="bullet" style="width:100%; height:100%;">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/bullet point.svg" alt="bullet" style="width:100%; height:100%; filter: brightness(0) saturate(100%) invert(31%) sepia(87%) saturate(2680%) hue-rotate(338deg) brightness(94%) contrast(96%);">
                         </div>
                         <div class="font-body" style="font-size: 0.95rem; color: #1e293b; line-height: 1.6; font-weight: 500;">
                             Organizations Need Proof That Employees Can <br> Recognize Attacks
@@ -96,7 +96,7 @@ get_header();
                     
                     <div style="display: flex; gap: 1.25rem;">
                         <div style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/bullet point.svg" alt="bullet" style="width:100%; height:100%;">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/bullet point.svg" alt="bullet" style="width:100%; height:100%; filter: brightness(0) saturate(100%) invert(31%) sepia(87%) saturate(2680%) hue-rotate(338deg) brightness(94%) contrast(96%);">
                         </div>
                         <div class="font-body" style="font-size: 0.95rem; color: #1e293b; line-height: 1.6; font-weight: 500;">
                             Knowing Is Not The Same As Doing - Behavior Must Be Tested
@@ -206,10 +206,11 @@ get_header();
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- Human Firewall Section -->
-    <section  style=" padding-bottom: clamp(4rem, 8vw, 8rem); background: #fafafa; border-radius: 24px; margin-top: 4rem;">
+    <section  style=" padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); background: #fafafa; border-radius: 24px; margin-top: 4rem;">
         <div class="container px-container">
         <!-- Decorative Grid Banner -->
         <div style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; margin-bottom: 3rem; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
@@ -309,7 +310,7 @@ get_header();
 
 
     <!-- Key Benefits Section -->
-    <section class="container px-container" style="padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); background: #ffffff;">
+    <section class="container px-container" style="padding-top: clamp(2.8rem, 5.6vw, 5.6rem); padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); background: #ffffff;">
         
         
             <!-- Header -->
@@ -327,40 +328,40 @@ get_header();
                 
                 <!-- Row 1 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">01.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">01.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Phishing Risk Score At A Glance - By Department And Team And Individual
                     </div>
                 </div>
 
                 <!-- Row 2 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">02.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">02.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Monitor Trends That Track Improvement Over Time With Each Simulation
                     </div>
                 </div>
 
                 <!-- Row 3 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">03.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">03.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Measure Employee Awareness With Concrete Data - Not Self Reported Surveys
                     </div>
                 </div>
 
                 <!-- Row 4 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">04.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">04.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Identify Departments Requiring Additional Training And Allocate Resources
                     </div>
                 </div>
 
                 <!-- Row 5 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">05.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">05.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Make Data Driven Cybersecurity Investment Decisions Backed By Evidence
                     </div>
                 </div>
@@ -370,7 +371,7 @@ get_header();
     </section>
 
     <!-- Key Benefits For Security Teams Section -->
-    <section class="roots-section-wrapper  bg-primary-container">
+    <section class="roots-section-wrapper  bg-primary">
         
 
         <div class="container px-container">
@@ -445,10 +446,11 @@ get_header();
 
             </div>
 </div>
+
     </section>
 
     <!-- Key Benefits For HR Section -->
-    <section class="container px-container" style="padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); background: #ffffff;">
+    <section class="container px-container" style="padding-top: clamp(2.8rem, 5.6vw, 5.6rem); padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); background: #ffffff;">
         
      
             <!-- Header -->
@@ -466,40 +468,40 @@ get_header();
                 
                 <!-- Row 1 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">01.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">01.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Foster An Organizational Promoting Cyber Vigilance Culture
                     </div>
                 </div>
 
                 <!-- Row 2 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">02.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">02.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Reinforce Learning Through Practical Simulation Exercises
                     </div>
                 </div>
 
                 <!-- Row 3 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">03.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">03.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Monitor Participation Rates And Progress Across All Simulation Campaigns
                     </div>
                 </div>
 
                 <!-- Row 4 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">04.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">04.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Encourage Responsible Digital Behavior
                     </div>
                 </div>
 
                 <!-- Row 5 -->
                 <div style="display: flex; align-items: center; padding: 1.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">05.</div>
-                    <div class="font-body text-dark" style="font-size: 1.15rem; font-weight: 500;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">05.</div>
+                    <div class="font-body text-dark" style="font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 500;">
                         Support Ongoing Learning Initiatives Through Repeatable Awareness Campaigns
                     </div>
                 </div>
@@ -636,7 +638,7 @@ get_header();
     </section>
 
     <!-- Decision Makers Section -->
-    <section class="container px-container" style="padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); background: #ffffff;">
+    <section class="container px-container" style="padding-top: clamp(2.8rem, 5.6vw, 5.6rem); padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); background: #ffffff;">
         
             <!-- Header Row -->
             <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;">
@@ -727,7 +729,7 @@ get_header();
     </section>
 
     <!-- Compliance & Audit Benefits Section -->
-    <section class="container px-container" style="padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); background: #ffffff;">
+    <section class="container px-container" style="padding-top: clamp(2.8rem, 5.6vw, 5.6rem); padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); background: #ffffff;">
       
             
             <!-- Header -->
@@ -802,7 +804,7 @@ get_header();
     </section>
 
     <!-- Why Organizations Choose Section -->
-    <section class="container px-container" style="padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); background: #ffffff;">
+    <section class="container px-container" style="padding-top: clamp(2.8rem, 5.6vw, 5.6rem); padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); background: #ffffff;">
         
             
             <!-- Header -->
@@ -889,7 +891,7 @@ get_header();
     </section>
 
     <!-- Cost vs Prevention Section -->
-    <section class="container px-container" style="padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); background: #ffffff;">
+    <section class="container px-container" style="padding-top: clamp(2.8rem, 5.6vw, 5.6rem); padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); background: #ffffff;">
       
             
             <!-- Header -->
@@ -907,32 +909,32 @@ get_header();
                 
                 <!-- Row 1 -->
                 <div style="display: flex; align-items: center; padding: 2rem 0; border-bottom: 1px solid #f1f5f9;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">01.</div>
-                    <div class="font-body" style="font-size: 1.25rem; color: #64748b;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">01.</div>
+                    <div class="font-body" style="font-size: clamp(1.2rem, 4vw, 1.8rem); color: #64748b;">
                         A Phishing Incident Can Cripple Operations And Harm Trust When It Matters Most.
                     </div>
                 </div>
 
                 <!-- Row 2 -->
                 <div style="display: flex; align-items: center; padding: 2rem 0; border-bottom: 1px solid #f1f5f9;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">02.</div>
-                    <div class="font-body" style="font-size: 1.25rem; color: #64748b;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">02.</div>
+                    <div class="font-body" style="font-size: clamp(1.2rem, 4vw, 1.8rem); color: #64748b;">
                         Data Breaches Can Damage Reputation And Trust For Years.
                     </div>
                 </div>
 
                 <!-- Row 3 -->
                 <div style="display: flex; align-items: center; padding: 2rem 0; border-bottom: 1px solid #f1f5f9;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">03.</div>
-                    <div class="font-body" style="font-size: 1.25rem; color: #64748b;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">03.</div>
+                    <div class="font-body" style="font-size: clamp(1.2rem, 4vw, 1.8rem); color: #64748b;">
                         Recovery Costs Far Exceed Prevention Costs, With Breaches Often Costing Millions.
                     </div>
                 </div>
 
                 <!-- Row 4 -->
                 <div style="display: flex; align-items: center; padding: 2rem 0; border-bottom: 1px solid #f1f5f9;">
-                    <div class="font-heading text-primary" style="font-size: 1rem; font-weight: 600; width: 120px; flex-shrink: 0;">04.</div>
-                    <div class="font-body" style="font-size: 1.25rem; color: #64748b;">
+                    <div class="font-heading text-primary" style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; width: 120px; flex-shrink: 0;">04.</div>
+                    <div class="font-body" style="font-size: clamp(1.2rem, 4vw, 1.8rem); color: #64748b;">
                         Breaches Can Trigger Costly Fines, Sanctions, And Remediation Requirements.
                     </div>
                 </div>

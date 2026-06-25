@@ -28,7 +28,7 @@ if ( ! is_array( $faq_data ) ) {
     </section>
 
     <!-- FAQ Content Section -->
-    <section class="container px-container" style="padding-bottom: clamp(4rem, 8vw, 6rem); max-width: 900px;">
+    <section class="container px-container" style="padding-bottom: clamp(2.8rem, 5.6vw, 4.2rem); max-width: 900px;">
         <div class="faq-content">
             
             <?php if ( empty( $faq_data ) ) : ?>

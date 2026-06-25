@@ -500,10 +500,10 @@ get_header();
             </div>
         </div>
         <!-- Bottom fade overlay -->
-        <div class="audience-fade-bottom"></div>
+
     </section>
 
-      <section class="container px-container" style="padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); background: #ffffff;">
+      <section class="container px-container" style="padding-top: clamp(2.8rem, 5.6vw, 5.6rem); padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); background: #ffffff;">
         
             
             <!-- Header -->

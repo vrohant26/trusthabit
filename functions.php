@@ -38,6 +38,9 @@ function trust_habbits_scripts() {
 
     // Custom JS file
     wp_enqueue_script( 'trust-habbits-customjs', get_template_directory_uri() . '/js/custom.js', array('gsap', 'gsap-scrolltrigger', 'gsap-splittext', 'lenis', 'swiper-js'), wp_get_theme()->get( 'Version' ), true );
+    
+    // Localize script for AJAX
+    wp_localize_script( 'trust-habbits-customjs', 'trustHabbitAjaxUrl', admin_url( 'admin-ajax.php' ) );
 }
 add_action( 'wp_enqueue_scripts', 'trust_habbits_scripts' );
 
@@ -501,18 +504,108 @@ function trust_habbits_register_blog_cpt() {
         'menu_position'      => null,
         'menu_icon'          => 'dashicons-admin-post',
         'show_in_rest'       => true, // Enables Gutenberg Editor
-        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'taxonomies'         => array( 'blog_tag' )
     );
 
     register_post_type( 'blog', $args );
+    
+    // Register custom taxonomy for blog tags
+    $tag_labels = array(
+        'name'                       => _x( 'Blog Tags', 'taxonomy general name', 'trust-habbits' ),
+        'singular_name'              => _x( 'Blog Tag', 'taxonomy singular name', 'trust-habbits' ),
+        'search_items'               => __( 'Search Blog Tags', 'trust-habbits' ),
+        'popular_items'              => __( 'Popular Blog Tags', 'trust-habbits' ),
+        'all_items'                  => __( 'All Blog Tags', 'trust-habbits' ),
+        'edit_item'                  => __( 'Edit Blog Tag', 'trust-habbits' ),
+        'update_item'                => __( 'Update Blog Tag', 'trust-habbits' ),
+        'add_new_item'               => __( 'Add New Blog Tag', 'trust-habbits' ),
+        'new_item_name'              => __( 'New Blog Tag Name', 'trust-habbits' ),
+        'separate_items_with_commas' => __( 'Separate tags with commas', 'trust-habbits' ),
+        'add_or_remove_items'        => __( 'Add or remove tags', 'trust-habbits' ),
+        'choose_from_most_used'      => __( 'Choose from the most used tags', 'trust-habbits' ),
+        'not_found'                  => __( 'No tags found.', 'trust-habbits' ),
+        'menu_name'                  => __( 'Tags', 'trust-habbits' ),
+    );
+
+    $tag_args = array(
+        'hierarchical'          => false, // False acts like tags
+        'labels'                => $tag_labels,
+        'show_ui'               => true,
+        'show_admin_column'     => true,
+        'update_count_callback' => '_update_post_term_count',
+        'query_var'             => true,
+        'rewrite'               => array( 'slug' => 'blog-tag' ),
+        'show_in_rest'          => true, // Essential for Gutenberg
+    );
+
+    register_taxonomy( 'blog_tag', 'blog', $tag_args );
 }
 add_action( 'init', 'trust_habbits_register_blog_cpt' );
 
 // Filter posts per page for blog archive
 function trust_habbits_blog_posts_per_page( $query ) {
-    if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'blog' ) ) {
-        $query->set( 'posts_per_page', 20 );
+    if ( !is_admin() && $query->is_main_query() && ( is_post_type_archive( 'blog' ) || is_tax('blog_tag') ) ) {
+        $query->set( 'posts_per_page', 10 );
     }
 }
 add_action( 'pre_get_posts', 'trust_habbits_blog_posts_per_page' );
+
+// ==========================================
+// Blog Archive AJAX Handler
+// ==========================================
+function trust_habbits_filter_blogs_ajax() {
+    $search = isset($_POST['s']) ? sanitize_text_field($_POST['s']) : '';
+    $tag    = isset($_POST['tag']) ? sanitize_text_field($_POST['tag']) : '';
+    $paged  = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
+
+    $args = array(
+        'post_type'      => 'blog',
+        'posts_per_page' => 10,
+        'paged'          => $paged,
+        's'              => $search,
+    );
+
+    if ( ! empty( $tag ) ) {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'blog_tag',
+                'field'    => 'slug',
+                'terms'    => $tag,
+            ),
+        );
+    }
+
+    $query = new WP_Query( $args );
+
+    ob_start();
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            get_template_part( 'template-parts/blog-loop-item' );
+        }
+    } else {
+        echo '<p class="font-body text-muted" style="grid-column: 1 / -1;">No blogs found matching your criteria.</p>';
+    }
+    $html = ob_get_clean();
+
+    ob_start();
+    echo paginate_links( array(
+        'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+        'format'    => '?paged=%#%',
+        'current'   => max( 1, $paged ),
+        'total'     => $query->max_num_pages,
+        'prev_text' => __( 'PREVIOUS' ),
+        'next_text' => __( 'NEXT' ),
+        'type'      => 'list',
+    ) );
+    $pagination = ob_get_clean();
+
+    wp_send_json_success( array(
+        'html'       => $html,
+        'pagination' => $pagination,
+    ) );
+}
+add_action( 'wp_ajax_filter_blogs', 'trust_habbits_filter_blogs_ajax' );
+add_action( 'wp_ajax_nopriv_filter_blogs', 'trust_habbits_filter_blogs_ajax' );
 

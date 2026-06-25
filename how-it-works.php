@@ -156,7 +156,7 @@ get_header();
     </section>
 
     <!-- Key Metrics Section -->
-    <section class="container px-container" style="padding-bottom: clamp(4rem, 8vw, 8rem); padding-top: clamp(4rem, 8vw, 6rem);">
+    <section class="container px-container" style="padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); padding-top: clamp(2.8rem, 5.6vw, 4.2rem);">
         <div class="metrics-header" style="max-width: 900px; margin-bottom: 4rem;">
             <h2 class="font-heading text-dark" style="font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 500; margin-bottom: 1.5rem; letter-spacing: -0.02em;">Key Metrics Available</h2>
             <p class="font-body text-muted" style="font-size: 1.15rem; line-height: 1.6; max-width: 850px;">Gain Clear Visibility Into Employee Security Awareness And Program Effectiveness Through Detailed Reporting And Analytics. Track Engagement, Identify High-Risk Groups, Measure Behavioral Trends, And Monitor Improvements Over Time With Actionable Insights Across Key Phishing Simulation Metrics.</p>
@@ -232,10 +232,10 @@ get_header();
     </section>
 
     <!-- What Makes Trust Habit Different Section -->
-    <section class="container px-container" style="padding-bottom: clamp(4rem, 8vw, 8rem); position: relative;">
+    <section class="container px-container" style="padding-bottom: clamp(2.8rem, 5.6vw, 5.6rem); position: relative;">
         <!-- Decorative Grid Background -->
-        <div style="position: absolute; top: 5%; right: -5%; width: 400px; height: 400px; background-image: url('data:image/svg+xml,%3Csvg width=\'24\' height=\'24\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'5\' height=\'5\' fill=\'%23e2e8f0\'/%3E%3C/svg%3E'); z-index: -1; opacity: 0.8; -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%); mask-image: radial-gradient(circle, black 30%, transparent 70%);"></div>
-        <div style="position: absolute; bottom: -5%; left: -5%; width: 400px; height: 400px; background-image: url('data:image/svg+xml,%3Csvg width=\'24\' height=\'24\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'5\' height=\'5\' fill=\'%23e2e8f0\'/%3E%3C/svg%3E'); z-index: -1; opacity: 0.8; -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%); mask-image: radial-gradient(circle, black 30%, transparent 70%);"></div>
+        <div style="position: absolute; top: 5%; right: -5%; width: 400px; height: 400px; background-image: url('data:image/svg+xml,%3Csvg width=\'16\' height=\'16\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'12\' height=\'12\' fill=\'%23e2e8f0\'/%3E%3C/svg%3E'); z-index: -1; opacity: 0.8; -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%); mask-image: radial-gradient(circle, black 30%, transparent 70%);"></div>
+        <div style="position: absolute; bottom: -5%; left: -5%; width: 400px; height: 400px; background-image: url('data:image/svg+xml,%3Csvg width=\'16\' height=\'16\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'12\' height=\'12\' fill=\'%23e2e8f0\'/%3E%3C/svg%3E'); z-index: -1; opacity: 0.8; -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%); mask-image: radial-gradient(circle, black 30%, transparent 70%);"></div>
 
         <div class="diff-header" style="max-width: 900px; margin-bottom: 4rem;">
             <div class="problem-badge" style="background:#eef2f6; color:#64748b; display:inline-flex; align-items:center; gap:0.5rem; padding:0.4rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:600; letter-spacing:0.05em; margin-bottom:1.5rem;">
@@ -350,12 +350,12 @@ get_header();
             </div>
 
             <!-- Card 4 (Info & CTA) -->
-            <div class="diff-card" style="border: 2px solid var(--color-primary); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; background: #fff; padding: 3.5rem 2.5rem; justify-content: center;">
+            <div class="diff-card font-semibold" style="overflow: hidden; display: flex; flex-direction: column; background: #fff; padding: 3.5rem 2.5rem; justify-content: center;">
                 <p class="font-body text-muted" style="font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem;">
-                    <span class="text-primary font-medium">Trust Habit</span> is designed to help organizations run phishing simulation programs that are realistic, scalable, and easy to manage. From guaranteed inbox delivery and targeted campaigns to role-specific attack scenarios and detailed analytics, every feature is built to provide meaningful insights into employee risk and drive measurable improvements in security awareness.
+                    <span class="text-primary font-semibold font-medium">Trust Habit</span> is designed to help organizations run phishing simulation programs that are realistic, scalable, and easy to manage. From guaranteed inbox delivery and targeted campaigns to role-specific attack scenarios and detailed analytics, every feature is built to provide meaningful insights into employee risk and drive measurable improvements in security awareness.
                 </p>
                 <div>
-                    <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-primary bg-primary text-white font-medium text-base rounded-sm inline-flex items-center gap-md">
+                    <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-primary bg-primary  text-white font-medium text-base rounded-sm inline-flex items-center gap-md">
                         Talk to an expert 
                         <span class="btn-icon icon-box icon-lg bg-white text-primary rounded-sm" style="width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center;">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

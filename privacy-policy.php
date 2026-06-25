@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <section class="container px-container" style="max-width: 900px; padding-top: clamp(6rem, 10vw, 8rem); padding-bottom: clamp(4rem, 8vw, 6rem);">
+    <section class="container px-container" style="max-width: 900px; padding-top: clamp(4.2rem, 7vw, 5.6rem); padding-bottom: clamp(2.8rem, 5.6vw, 4.2rem);">
         <?php
         while ( have_posts() ) :
             the_post();

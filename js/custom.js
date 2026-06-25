@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof SplitText !== "undefined") plugins.push(SplitText);
   gsap.registerPlugin(...plugins);
 
-
   // Exclamation glow — bento cards
   document.querySelectorAll(".exclamation-glow").forEach((el) => {
     ScrollTrigger.create({
@@ -227,10 +226,30 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.innerWidth <= 900) return;
 
       const triggers = [];
-      if (path1) triggers.push({ path: path1, trigger: ".ff-row-1", endTrigger: ".ff-row-2" });
-      if (path2) triggers.push({ path: path2, trigger: ".ff-row-2", endTrigger: ".ff-row-3" });
-      if (path3) triggers.push({ path: path3, trigger: ".ff-row-3", endTrigger: ".ff-row-4" });
-      if (path4) triggers.push({ path: path4, trigger: ".ff-row-4", endTrigger: ".ff-row-5" });
+      if (path1)
+        triggers.push({
+          path: path1,
+          trigger: ".ff-row-1",
+          endTrigger: ".ff-row-2",
+        });
+      if (path2)
+        triggers.push({
+          path: path2,
+          trigger: ".ff-row-2",
+          endTrigger: ".ff-row-3",
+        });
+      if (path3)
+        triggers.push({
+          path: path3,
+          trigger: ".ff-row-3",
+          endTrigger: ".ff-row-4",
+        });
+      if (path4)
+        triggers.push({
+          path: path4,
+          trigger: ".ff-row-4",
+          endTrigger: ".ff-row-5",
+        });
 
       triggers.forEach(({ path, trigger, endTrigger }) => {
         gsap.to(path, {
@@ -406,4 +425,190 @@ document.addEventListener("DOMContentLoaded", function () {
       dmCarousel.scrollBy({ left: getDmScrollAmount(), behavior: "smooth" });
     });
   }
+
+  // ==========================================
+  // Blog Archive AJAX Filtering & Pagination
+  // ==========================================
+  const blogForm = document.getElementById("blog-search-form");
+  const blogTags = document.querySelectorAll(".blog-tag-filter");
+  const blogGrid = document.getElementById("blog-grid-container");
+  const blogPagination = document.getElementById("blog-pagination-container");
+  const blogOverlay = document.getElementById("blog-loading-overlay");
+  const mobileFiltersToggle = document.getElementById("mobile-filters-toggle");
+  const mobileFiltersPopup = document.querySelector(".popup-on-mobile");
+
+  if (mobileFiltersToggle && mobileFiltersPopup) {
+    mobileFiltersToggle.addEventListener("click", () => {
+      mobileFiltersPopup.classList.toggle("show");
+      const plusIcon = mobileFiltersToggle.querySelector(".plus-icon");
+      if (mobileFiltersPopup.classList.contains("show")) {
+        plusIcon.textContent = "-";
+      } else {
+        plusIcon.textContent = "+";
+      }
+    });
+
+    // Close popup if clicking outside
+    document.addEventListener("click", (e) => {
+      if (!mobileFiltersToggle.contains(e.target) && !mobileFiltersPopup.contains(e.target)) {
+        mobileFiltersPopup.classList.remove("show");
+        const plusIcon = mobileFiltersToggle.querySelector(".plus-icon");
+        if (plusIcon) plusIcon.textContent = "+";
+      }
+    });
+  }
+
+  if (blogGrid) {
+    let currentSearch = document.getElementById("blog-search-input")?.value || "";
+    let currentTag = "";
+    let currentPage = 1;
+
+    // Helper to fetch posts via AJAX
+    const fetchBlogs = (search, tag, page) => {
+      if (blogOverlay) blogOverlay.style.display = "flex";
+      
+      const formData = new FormData();
+      formData.append("action", "filter_blogs");
+      formData.append("s", search);
+      formData.append("tag", tag);
+      formData.append("paged", page);
+      // Ensure nonce is included if you decide to add one, but for public search it's not strictly necessary.
+
+      // In WordPress, ajax url is typically passed via wp_localize_script, we'll assume standard WP setup
+      const ajaxUrl = window.trustHabbitAjaxUrl || "/wp-admin/admin-ajax.php";
+
+      fetch(ajaxUrl, {
+        method: "POST",
+        body: formData,
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          blogGrid.innerHTML = data.data.html;
+          blogPagination.innerHTML = data.data.pagination;
+          
+          // Re-bind pagination clicks
+          bindPagination();
+          
+          // Scroll to top of grid
+          const contentArea = document.getElementById("blog-content-area");
+          if (contentArea) {
+            const yOffset = -120; 
+            const y = contentArea.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+          }
+        }
+        if (blogOverlay) blogOverlay.style.display = "none";
+      })
+      .catch(err => {
+        console.error("Error fetching blogs:", err);
+        if (blogOverlay) blogOverlay.style.display = "none";
+      });
+    };
+
+    // Bind Search
+    if (blogForm) {
+      blogForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        currentSearch = document.getElementById("blog-search-input").value;
+        currentPage = 1;
+        fetchBlogs(currentSearch, currentTag, currentPage);
+      });
+    }
+
+    // Bind Tags
+    blogTags.forEach(tagBtn => {
+      tagBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Remove active class from all
+        blogTags.forEach(btn => {
+          btn.classList.remove("active");
+          const marker = btn.querySelector(".tag-marker");
+          if(marker) marker.style.background = "transparent";
+        });
+        
+        // Set active
+        tagBtn.classList.add("active");
+        const marker = tagBtn.querySelector(".tag-marker");
+        if(marker) marker.style.background = "var(--color-primary)";
+
+        currentTag = tagBtn.getAttribute("data-tag");
+        currentPage = 1;
+        fetchBlogs(currentSearch, currentTag, currentPage);
+
+        // Close mobile popup if open
+        if (mobileFiltersPopup && mobileFiltersPopup.classList.contains("show")) {
+          mobileFiltersPopup.classList.remove("show");
+          const plusIcon = mobileFiltersToggle.querySelector(".plus-icon");
+          if (plusIcon) plusIcon.textContent = "+";
+        }
+      });
+    });
+
+    // Bind Pagination (needs to be bound initially and after every AJAX fetch)
+    const bindPagination = () => {
+      const pageLinks = blogPagination.querySelectorAll("a.page-numbers");
+      pageLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const url = new URL(link.href);
+          
+          // Extract page number
+          let page = 1;
+          if (url.searchParams.has("paged")) {
+            page = parseInt(url.searchParams.get("paged"));
+          } else {
+            const match = url.pathname.match(/\/page\/(\d+)/);
+            if (match) page = parseInt(match[1]);
+          }
+          
+          currentPage = page;
+          fetchBlogs(currentSearch, currentTag, currentPage);
+        });
+      });
+    };
+
+    bindPagination();
+  }
+  // Dynamic Table of Contents for Single Blog
+  // ==========================================
+  const blogContentArea = document.getElementById('single-blog-content');
+  const tocList = document.getElementById('dynamic-toc-list');
+  const tocContainer = document.getElementById('blog-toc-container');
+
+  if (blogContentArea && tocList && tocContainer) {
+    const headings = blogContentArea.querySelectorAll('h2');
+    
+    if (headings.length > 0) {
+      headings.forEach((heading, index) => {
+        // Ensure heading has an ID
+        if (!heading.id) {
+          heading.id = 'blog-heading-' + (index + 1);
+        }
+
+        // Create TOC link
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.innerHTML = '<span style="flex-shrink: 0; width: 1.25rem;">' + (index + 1) + '.</span> <span style="flex: 1;">' + heading.textContent + '</span>';
+        a.style.display = 'flex';
+        a.style.gap = '0.25rem';
+        
+        // Smooth scroll
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const yOffset = -100; // offset for sticky header
+          const y = heading.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({top: y, behavior: 'smooth'});
+        });
+
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+    } else {
+      // Hide TOC if no headings found
+      tocContainer.style.display = 'none';
+    }
+  }
+
 });
