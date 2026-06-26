@@ -1,8 +1,8 @@
 /*
 Theme Name: Trust Habbit Custom Theme
 Description: Custom theme for Trust Habbits
-Author: Antigravity
-Version: 3.0.5
+Author: Rohant
+Version: 3.0.6
 */
 
 @font-face {
@@ -2713,7 +2713,7 @@ ul {
   color: var(--color-text-dark);
 }
 
-.single-blog-content > *:first-child {
+.single-blog-content>*:first-child {
   margin-top: 0;
 }
 

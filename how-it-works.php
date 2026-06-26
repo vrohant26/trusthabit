@@ -15,7 +15,10 @@ get_header();
         <div class="ff-bg"></div>
 
         <div class="container px-container" style="position:relative;z-index:2;">
-
+            <div class="problem-badge" style="background:#eef2f6; color:#64748b; display:inline-flex; align-items:center; gap:0.5rem; padding:0.4rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:600; letter-spacing:0.05em; margin-bottom:1.5rem;">
+                <span class="problem-badge-dot" style="background:var(--color-primary); width:6px; height:6px; border-radius:50%; display:inline-block;"></span>
+                Phishing Defense Process
+            </div>
             <!-- Header -->
             <div class="ff-header">
                 <h2 class="ff-title  font-heading">
@@ -57,7 +60,7 @@ get_header();
                 <div class="ff-row ff-row-1">
                     <div class="ff-img-col">
                         <div class="ff-card" id="ff-card-1">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Build Your Lists.webp"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/how it works 1.webp"
                                  alt="Build Your Lists" class="ff-img">
                         </div>
                     </div>
@@ -86,7 +89,7 @@ get_header();
                     </div>
                     <div class="ff-img-col">
                         <div class="ff-card" id="ff-card-2">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Choose a Simulation.webp"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/how it works 2.webp"
                                  alt="Choose a Simulation" class="ff-img">
                         </div>
                     </div>
@@ -106,7 +109,7 @@ get_header();
                     </div>
                     <div class="ff-img-col">
                         <div class="ff-card" id="ff-card-3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Launch and Deliver.webp"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/how it works 3.webp"
                                  alt="Launch & Deliver" class="ff-img">
                         </div>
                     </div>
@@ -116,7 +119,7 @@ get_header();
                 <div class="ff-row ff-row-4">
                     <div class="ff-img-col">
                         <div class="ff-card" id="ff-card-4">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Measure and Identify.webp"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/how it works 4.webp"
                                  alt="Measure & Identify" class="ff-img">
                         </div>
                     </div>
@@ -136,7 +139,7 @@ get_header();
                 <div class="ff-row ff-row-5">
                     <div class="ff-img-col">
                         <div class="ff-card" id="ff-card-5">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Improve and Track.webp"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/how it works 5.webp"
                                  alt="Improve & Track" class="ff-img">
                         </div>
                     </div>
