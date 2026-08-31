@@ -300,6 +300,8 @@ get_header();
                     <path id="ff-path-1"    class="ff-path-line"/>
                     <path id="ff-path-2-bg" class="ff-path-bg"/>
                     <path id="ff-path-2"    class="ff-path-line"/>
+                    <path id="ff-path-3-bg" class="ff-path-bg"/>
+                    <path id="ff-path-3"    class="ff-path-line"/>
                 </svg>
 
                 <!-- Row 1 — Image LEFT · Content RIGHT -->
@@ -355,6 +357,24 @@ get_header();
                             vulnerable users, and measure security<br>
                             awareness progress in real time.
                         </p>
+                    </div>
+                </div>
+
+                <!-- Row 4 — Content LEFT · Image RIGHT -->
+                <div class="ff-row ff-row-4">
+                    <div class="ff-text-col">
+                        <span class="ff-badge font-heading">4</span>
+                        <h3 class="ff-step-title font-heading">Train your team</h3>
+                        <p class="ff-step-desc font-body text-muted">
+                            Give employees practical phishing training<br>
+                            that strengthens threat recognition and<br>
+                            helps reduce future susceptibility.
+                        </p>
+                    </div>
+                    <div class="ff-img-col">
+                        <div class="ff-card" id="ff-card-4">
+                            <div class="ff-img" style="background-color: #fff; width: 100%; aspect-ratio: 4/3; border-radius: 8px; border: 1px solid #e2e8f0;"></div>
+                        </div>
                     </div>
                 </div>
 

@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const card3 = document.getElementById("ff-card-3");
   const card4 = document.getElementById("ff-card-4");
   const card5 = document.getElementById("ff-card-5");
+  const card6 = document.getElementById("ff-card-6");
   const path1bg = document.getElementById("ff-path-1-bg");
   const path1 = document.getElementById("ff-path-1");
   const path2bg = document.getElementById("ff-path-2-bg");
@@ -122,6 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const path3 = document.getElementById("ff-path-3");
   const path4bg = document.getElementById("ff-path-4-bg");
   const path4 = document.getElementById("ff-path-4");
+  const path5bg = document.getElementById("ff-path-5-bg");
+  const path5 = document.getElementById("ff-path-5");
 
   if (ffRows && card1 && card2 && path1) {
     // Measure element position relative to ancestor — immune to CSS transforms & scroll
@@ -220,6 +223,17 @@ document.addEventListener("DOMContentLoaded", () => {
           strokeDashoffset: path4.getTotalLength(),
         });
       }
+
+      if (path5 && card6) {
+        const p5 = buildPath(card5, 0.5, card6, 0.5);
+        if (path5bg) path5bg.setAttribute("d", p5.d);
+        path5.setAttribute("d", p5.d);
+        path5.style.stroke = "url(#ff-grad-1)";
+        gsap.set(path5, {
+          strokeDasharray: path5.getTotalLength(),
+          strokeDashoffset: path5.getTotalLength(),
+        });
+      }
     }
 
     function setupDrawTriggers() {
@@ -249,6 +263,12 @@ document.addEventListener("DOMContentLoaded", () => {
           path: path4,
           trigger: ".ff-row-4",
           endTrigger: ".ff-row-5",
+        });
+      if (path5)
+        triggers.push({
+          path: path5,
+          trigger: ".ff-row-5",
+          endTrigger: ".ff-row-6",
         });
 
       triggers.forEach(({ path, trigger, endTrigger }) => {

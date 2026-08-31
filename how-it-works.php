@@ -45,7 +45,6 @@ get_header();
                             <stop offset="100%" stop-color="#6aaad8" stop-opacity="0.88"/>
                         </linearGradient>
                     </defs>
-                    <!-- Paths between cards -->
                     <path id="ff-path-1-bg" class="ff-path-bg"/>
                     <path id="ff-path-1"    class="ff-path-line"/>
                     <path id="ff-path-2-bg" class="ff-path-bg"/>
@@ -54,6 +53,8 @@ get_header();
                     <path id="ff-path-3"    class="ff-path-line"/>
                     <path id="ff-path-4-bg" class="ff-path-bg"/>
                     <path id="ff-path-4"    class="ff-path-line"/>
+                    <path id="ff-path-5-bg" class="ff-path-bg"/>
+                    <path id="ff-path-5"    class="ff-path-line"/>
                 </svg>
 
                 <!-- Row 1 — Image LEFT · Content RIGHT -->
@@ -151,6 +152,24 @@ get_header();
                             monitor measurable risk reduction over<br>
                             time with executive-ready reporting.
                         </p>
+                    </div>
+                </div>
+
+                <!-- Row 6 — Content LEFT · Image RIGHT -->
+                <div class="ff-row ff-row-6">
+                    <div class="ff-text-col">
+                        <span class="ff-badge font-heading">6</span>
+                        <h3 class="ff-step-title font-heading">Train your team</h3>
+                        <p class="ff-step-desc font-body text-muted">
+                            Give employees practical phishing training<br>
+                            that strengthens threat recognition and<br>
+                            helps reduce future susceptibility.
+                        </p>
+                    </div>
+                    <div class="ff-img-col">
+                        <div class="ff-card" id="ff-card-6">
+                            <div class="ff-img" style="background-color: #fff; width: 100%; aspect-ratio: 4/3; border-radius: 8px; border: 1px solid #e2e8f0;"></div>
+                        </div>
                     </div>
                 </div>
 
