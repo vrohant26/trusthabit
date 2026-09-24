@@ -373,7 +373,8 @@ get_header();
                     </div>
                     <div class="ff-img-col">
                         <div class="ff-card" id="ff-card-4">
-                            <div class="ff-img" style="background-color: #fff; width: 100%; aspect-ratio: 4/3; border-radius: 8px; border: 1px solid #e2e8f0;"></div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/training.jpeg"
+                                 alt="Train your team" class="ff-img">
                         </div>
                     </div>
                 </div>

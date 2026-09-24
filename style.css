@@ -1076,15 +1076,29 @@ ul {
 
 /* Row 2 flips the order: text left, image right */
 .ff-row-2,
+.ff-row-4,
+.ff-row-6,
 .ff-row-reverse {
   grid-template-columns: 1fr 55%;
+}
+
+.ff-card {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff57;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
 }
 
 .ff-img {
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+
 }
 
 /* Text column */
@@ -1134,6 +1148,8 @@ ul {
 
   .ff-row,
   .ff-row-2,
+  .ff-row-4,
+  .ff-row-6,
   .ff-row-reverse {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1141,6 +1157,8 @@ ul {
 
   /* On mobile Row 2 restore natural order: image above text */
   .ff-row-2 .ff-img-col,
+  .ff-row-4 .ff-img-col,
+  .ff-row-6 .ff-img-col,
   .ff-row-reverse .ff-img-col {
     order: -1;
   }

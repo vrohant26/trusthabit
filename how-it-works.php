@@ -96,8 +96,14 @@ get_header();
                     </div>
                 </div>
 
-                <!-- Row 3 — Content LEFT · Image RIGHT -->
-                <div class="ff-row ff-row-3 ff-row-reverse">
+                <!-- Row 3 — Image LEFT · Content RIGHT -->
+                <div class="ff-row ff-row-3">
+                    <div class="ff-img-col">
+                        <div class="ff-card" id="ff-card-3">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/how it works 3.webp"
+                                 alt="Launch & Deliver" class="ff-img">
+                        </div>
+                    </div>
                     <div class="ff-text-col">
                         <span class="ff-badge font-heading">3</span>
                         <h3 class="ff-step-title font-heading">Launch & Deliver</h3>
@@ -108,22 +114,10 @@ get_header();
                             or IT intervention required.
                         </p>
                     </div>
-                    <div class="ff-img-col">
-                        <div class="ff-card" id="ff-card-3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/how it works 3.webp"
-                                 alt="Launch & Deliver" class="ff-img">
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Row 4 — Image LEFT · Content RIGHT -->
+                <!-- Row 4 — Content LEFT · Image RIGHT -->
                 <div class="ff-row ff-row-4">
-                    <div class="ff-img-col">
-                        <div class="ff-card" id="ff-card-4">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/how it works 4.webp"
-                                 alt="Measure & Identify" class="ff-img">
-                        </div>
-                    </div>
                     <div class="ff-text-col">
                         <span class="ff-badge font-heading">4</span>
                         <h3 class="ff-step-title font-heading">Measure & Identify</h3>
@@ -133,6 +127,12 @@ get_header();
                             risk employees, teams, and vulnerability<br>
                             patterns.
                         </p>
+                    </div>
+                    <div class="ff-img-col">
+                        <div class="ff-card" id="ff-card-4">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/how it works 4.webp"
+                                 alt="Measure & Identify" class="ff-img">
+                        </div>
                     </div>
                 </div>
 
@@ -168,7 +168,8 @@ get_header();
                     </div>
                     <div class="ff-img-col">
                         <div class="ff-card" id="ff-card-6">
-                            <div class="ff-img" style="background-color: #fff; width: 100%; aspect-ratio: 4/3; border-radius: 8px; border: 1px solid #e2e8f0;"></div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/training.jpeg"
+                                 alt="Train your team" class="ff-img">
                         </div>
                     </div>
                 </div>
